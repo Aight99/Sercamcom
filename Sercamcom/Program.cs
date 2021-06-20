@@ -13,7 +13,6 @@ namespace Sercamcom
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            /// Hello World
             Application.Run(new MainForm());
         }
     }

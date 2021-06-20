@@ -13,75 +13,59 @@ namespace Sercamcom
     }
     public struct Data // Структурный тип ключа, состоящий из двух полей
     {
-        public byte day; // Целочисленное поле дня
-        public byte month; // Целочисленное поле месяца
+        public int productCode;
+        public List<SaleNode> indexList;
     }
     class Tree
     {
+
         public class Node // Класс узла
         {
-            public Colour color;      // Поле цвета
-            public Node left;        // Поле-узел слева
-            public Node right;        // Поле-узел справа
-            public Node parent;        // Поле-узел, являющийся родителем
-            public ushort count = 1;    // Счётчик вставок узла с данным ключом в дерево //TO DELETE
-            public Data data = new Data();  // Поле данных
+            public Colour color;    // Поле цвета
+            public Node left;       // Поле-узел слева
+            public Node right;      // Поле-узел справа
+            public Node parent;     // Поле-узел, являющийся родителем
+            public Data data;       // Поле данных
 
-
-            // 
-
-            public Node(byte day, byte month)
+            public Node(int code, SaleNode indexInList)
             {
-                this.data.day = day;
-                this.data.month = month;
-                // Проверка ввода
-                if (day == 0 || day > 31 || month == 0 || month > 13 || (day > 29 && month == 2))
-                {
-                    Console.WriteLine("Invalid data. Creating node 1.1");
-                    this.data.day = 1;
-                    this.data.month = 1;
-                }
+                this.data.indexList = new List<SaleNode> { };
+                this.data.productCode = code;
+                this.data.indexList.Add(indexInList);
+            }
+            public Node(int code)
+            {
+                this.data.indexList = new List<SaleNode> { };
+                this.data.productCode = code;
             }
             public Node(Colour color)
             {
+                this.data.indexList = new List<SaleNode> { };
                 this.color = color;
             }
-
-            public Node(byte day, byte month, Colour color) //TO DELETE
+            public Node(int code, Colour color, SaleNode indexInList)
             {
-                this.data.day = day;
-                this.data.month = month;
-                if (day == 0 || day > 31 || month == 0 || month > 13 || (day > 29 && month == 2))
-                {
-                    Console.WriteLine("Invalid data. Creating node 1.1");
-                    this.data.day = 1;
-                    this.data.month = 1;
-                }
+                this.data.indexList = new List<SaleNode> { };
+                this.data.productCode = code;
+                this.data.indexList.Add(indexInList);
                 this.color = color;
             }
 
+            ///
+            /// Перегрузки сравнений 
+            /// 
 
-            // Перегрузки сравнений 
-
-            // Проверяет, меньше ли ключ первого узла, чем ключ второго узла
-            // Выходные данные: True или False
             public bool IsLess(Node node2)
             {
-                return (data.month < node2.data.month) || (data.month == node2.data.month && data.day < node2.data.day);
+                return (this.data.productCode < node2.data.productCode);
             }
-
-            // Проверяет, больше ли ключ первого узла, чем ключ второго узла
-            // Выходные данные: True или False
             public bool IsMore(Node node2)
             {
-                return (data.month > node2.data.month) || (data.month == node2.data.month && data.day > node2.data.day);
+                return (this.data.productCode > node2.data.productCode);
             }
-
-            // Проверяет, равны ли ключи первого и второго узлов
-            // Выходные данные: True или False
             public bool IsEqual(Node node2)
             {
-                return data.month == node2.data.month && data.day == node2.data.day;
+                return (this.data.productCode == node2.data.productCode);
             }
 
         }
@@ -89,26 +73,17 @@ namespace Sercamcom
         private Node root; // Узел-корень дерева
         private Node nil; // Пустой узел-лист дерева
 
-
-        // Конструктор дерева
-        // Формальные параметры: пусто
-        // Входные данные: узлы root и nil
-        // Выходные данные: инициализация чёрного узла nil, root = nil
         public Tree()
         {
             nil = new Node(Colour.Black);
             nil.parent = nil;
             nil.left = nil;
             nil.right = nil;
-            nil.data.day = 0;
-            nil.data.month = 0;
+            nil.data.productCode = 0;
+            nil.data.indexList = new List<SaleNode> { };
             root = nil;
         }
 
-        // Удаляет все элементы дерева, освобождая память
-        // Формальные параметры: пусто
-        // Входные данные: дерево
-        // Выходные данные: root = nil
         public void Clear()
         {
             Console.WriteLine("Clearing the tree.");
@@ -117,11 +92,10 @@ namespace Sercamcom
             DisplayTree();
         }
 
+        ///
+        /// Повороты
+        /// 
 
-        // Вращает дерево налево относительно узла
-        // Формальные параметры: узел X
-        // Входные данные: дерево
-        // Выходные данные: дерево с изменёнными связями около X
         private void LeftRotate(Node X)
         {
             Node Y = X.right; // set Y
@@ -145,11 +119,6 @@ namespace Sercamcom
             if (X != nil)
                 X.parent = Y;
         }
-
-        // Вращает дерево направо относительно узла
-        // Формальные параметры: узел X
-        // Входные данные: дерево
-        // Выходные данные: дерево с изменёнными связями около X
         private void RightRotate(Node Y)
         {
             Node X = Y.left;
@@ -174,15 +143,124 @@ namespace Sercamcom
                 Y.parent = X;
         }
 
-        // Нахождение узла с заданным ключом в дереве
-        // Формальные параметры: поля структуры ключа day и month
-        // Входные данные: дерево
-        // Выходные данные: узел с заданным ключом
-        public Node Find(byte day, byte month)
+        /// 
+        /// Поиски
+        /// 
+
+        public SaleNode FindSale(SaleNode index)
+        {
+            int code = index.GetProductCode();
+            bool isFound = false;
+            Node temp = root;
+            Node node = new Node(code);
+
+            while (!isFound)
+            {
+                if (temp == nil)
+                    break;
+                if (node.IsLess(temp))
+                    temp = temp.left;
+                else if (node.IsMore(temp))
+                    temp = temp.right;
+                else
+                    isFound = true;
+            }
+
+            if (isFound)
+            {
+                foreach (var sale in temp.data.indexList)
+                {
+                    if (isEquals(sale, index))
+                    {
+                        Console.WriteLine($"Found! {sale.product} from {sale.login} : {sale.GetProductCode()}");
+                        return sale;
+                    }
+                }
+                return null;
+            }
+            else
+                return null;
+        }
+        public SaleNode FindSale(string login, string product)
+        {
+            int code = 0;
+            for (int i = 0; i < product.Length; i++)
+            {
+                code += (int)product[i];
+            }
+            bool isFound = false;
+            Node temp = root;
+            Node node = new Node(code);
+
+            while (!isFound)
+            {
+                if (temp == nil)
+                    break;
+                if (node.IsLess(temp))
+                    temp = temp.left;
+                else if (node.IsMore(temp))
+                    temp = temp.right;
+                else
+                    isFound = true;
+            }
+            if (isFound)
+            {
+                foreach (var sale in temp.data.indexList)
+                {
+                    if (sale.login == login)
+                    {
+                        return sale;
+                    }
+                }
+            }
+            return null;
+        }
+
+        public SaleNode FindSaleWithCount(string login, string product)
+        {
+            int compare = 0;
+            int code = 0;
+            for (int i = 0; i < product.Length; i++)
+            {
+                code += (int)product[i];
+            }
+            bool isFound = false;
+            Node temp = root;
+            Node node = new Node(code);
+
+            while (!isFound)
+            {
+                compare++;
+                if (temp == nil)
+                    break;
+                if (node.IsLess(temp))
+                    temp = temp.left;
+                else if (node.IsMore(temp))
+                    temp = temp.right;
+                else
+                    isFound = true;
+            }
+            if (isFound)
+            {
+                foreach (var sale in temp.data.indexList)
+                {
+                    compare++;
+                    if (sale.login == login)
+                    {
+                        //MessageBox.Show($"Сравнений - {compare}");
+                        return sale;
+                    }
+                }
+            }
+            //MessageBox.Show($"Сравнений - {compare}");
+            return null;
+        }
+
+        public Node FindNode(int code)
         {
             bool isFound = false;
             Node temp = root;
-            Node node = new Node(day, month);
+            Node node = new Node(code);
 
             while (!isFound)
             {
@@ -201,22 +279,46 @@ namespace Sercamcom
             else
                 return nil;
         }
+        public Node FindNode(SaleNode index)
+        {
+            int code = index.GetProductCode();
+            bool isFound = false;
+            Node temp = root;
+            Node node = new Node(code);
 
-        // Нахождение узла с минимальным ключом в дереве
-        // Формальные параметры: пусто
-        // Входные данные: дерево
-        // Выходные данные: узел с минимальным ключом
+            while (!isFound)
+            {
+                if (temp == nil)
+                    break;
+                if (node.IsLess(temp))
+                    temp = temp.left;
+                else if (node.IsMore(temp))
+                    temp = temp.right;
+                else
+                    isFound = true;
+            }
+
+            if (isFound)
+            {
+                foreach (var sale in temp.data.indexList)
+                {
+                    if (isEquals(sale, index))
+                    {
+                        Console.WriteLine($"Found! {sale.product} from {sale.login} : {sale.GetProductCode()}");
+                        return temp;
+                    }
+                }
+                return nil;
+            }
+            else
+                return nil;
+        }
         public Node FindMinimum()
         {
             Node node = FindMinimum(root);
-            Console.WriteLine("Minimal node {0}.{1} in the tree was found.", node.data.day, node.data.month);
+            Console.WriteLine("Minimal node {0} in the tree was found.", node.data.productCode);
             return node;
         }
-
-        // Нахождение узла с минимальным ключом в поддереве
-        // Формальные параметры: узел-корень node поддерева
-        // Входные данные: дерево
-        // Выходные данные: узел с минимальным ключом в поддереве
         public Node FindMinimum(Node node)
         {
             Node temp = node;
@@ -230,10 +332,10 @@ namespace Sercamcom
             return temp;
         }
 
-        // Выводит значения полей узлов дерева на экран с учётом связей
-        // Формальные параметры: пусто
-        // Входные данные: дерево
-        // Выходные данные: значения узлов дерева по порядку
+        /// 
+        /// Выводы и обходы
+        /// 
+
         public void DisplayTree()
         {
             if (root == nil)
@@ -244,35 +346,24 @@ namespace Sercamcom
             if (root != nil)
             {
                 TraversalNLR();
-                //Display(root, 0);
                 Console.WriteLine("____________________________________");
             }
         }
-
-        // Выводит значения полей узлов поддерева на экран с учётом связей
-        // Формальные параметры: узел-корень поддерева, число пробелов n
-        // Входные данные: дерево
-        // Выходные данные: значения узлов поддерева по порядку
         private void Display(Node current, int n)
         {
             if (current != nil)
             {
                 Display(current.right, n + 1);
                 Console.Write("  ");
-                Console.Write("{0}.{1}", current.data.day, current.data.month);
+                Console.Write("{0}", current.data.productCode);
                 if (current.color == Colour.Black)
-                    Console.WriteLine(" (B, {0})", current.count);
+                    Console.WriteLine(" (B)");
                 else
-                    Console.WriteLine(" (R, {0})", current.count);
+                    Console.WriteLine(" (R)");
 
                 Display(current.left, n + 1);
             }
         }
-
-        // Выводит ключи узлов согласно прямому обходу дерева
-        // Формальные параметры: пусто
-        // Входные данные: дерево
-        // Выходные данные: значения узлов дерева в порядке КЛП
         public void TraversalNLR()
         {
             Console.WriteLine("Pre-order NLR");
@@ -281,25 +372,15 @@ namespace Sercamcom
                 Console.WriteLine("Empty tree.");
             Console.WriteLine();
         }
-
-        // Выводит ключи узлов согласно прямому обходу поддерева
-        // Формальные параметры: узел-корень current поддерева
-        // Входные данные: дерево
-        // Выходные данные: значения узлов поддерева в порядке КЛП
         private void TraversalNLR(Node current)
         {
             if (current != nil)
             {
-                Console.Write("{0}.{1} [{2}] ", current.data.day, current.data.month, current.color);
+                Console.Write("{0} : {1} [{2}] ", current.data.indexList[0].product, current.data.productCode, current.color);
                 TraversalNLR(current.left);
                 TraversalNLR(current.right);
             }
         }
-
-        // Выводит ключи узлов согласно симметричному обходу дерева
-        // Формальные параметры: пусто
-        // Входные данные: дерево
-        // Выходные данные: значения узлов дерева в порядке ЛКП
         public void TraversalLNR()
         {
             Console.WriteLine("In-order LNR");
@@ -308,25 +389,15 @@ namespace Sercamcom
                 Console.WriteLine("Empty tree.");
             Console.WriteLine();
         }
-
-        // Выводит ключи узлов согласно симметричному обходу поддерева
-        // Формальные параметры: узел-корень current поддерева
-        // Входные данные: дерево
-        // Выходные данные: значения узлов поддерева в порядке ЛКП
         private void TraversalLNR(Node current)
         {
             if (current != nil)
             {
                 TraversalLNR(current.left);
-                Console.Write("{0}.{1} ", current.data.day, current.data.month);
+                Console.Write("{0} ", current.data.productCode);
                 TraversalLNR(current.right);
             }
         }
-
-        // Выводит ключи узлов согласно обратному симметричному обходу дерева
-        // Формальные параметры: пусто
-        // Входные данные: дерево
-        // Выходные данные: значения узлов дерева в порядке ПКЛ
         public void TraversalRNL()
         {
             Console.WriteLine("Reverse in-order RNL");
@@ -335,25 +406,15 @@ namespace Sercamcom
                 Console.WriteLine("Empty tree.");
             Console.WriteLine();
         }
-
-        // Выводит ключи узлов согласно обратному симметричному обходу поддерева
-        // Формальные параметры: узел-корень current поддерева
-        // Входные данные: дерево
-        // Выходные данные: значения узлов поддерева в порядке ПКЛ
         private void TraversalRNL(Node current)
         {
             if (current != nil)
             {
                 TraversalRNL(current.right);
-                Console.Write("{0}.{1} ", current.data.day, current.data.month);
+                Console.Write("{0} ", current.data.productCode);
                 TraversalRNL(current.left);
             }
         }
-
-        // Выводит ключи узлов согласно обратному обходу дерева
-        // Формальные параметры: пусто
-        // Входные данные: дерево
-        // Выходные данные: значения узлов дерева в порядке ЛПК
         public void TraversalLRN()
         {
             Console.WriteLine("Post-order LRN");
@@ -362,18 +423,13 @@ namespace Sercamcom
                 Console.WriteLine("Empty tree.");
             Console.WriteLine();
         }
-
-        // Выводит ключи узлов согласно обратному обходу поддерева
-        // Формальные параметры: узел-корень current поддерева
-        // Входные данные: дерево
-        // Выходные данные: значения узлов поддерева в порядке ЛПК
         private void TraversalLRN(Node current)
         {
             if (current != nil)
             {
                 TraversalLRN(current.left);
                 TraversalLRN(current.right);
-                Console.Write("{0}.{1} ", current.data.day, current.data.month);
+                Console.Write("{0} ", current.data.productCode);
             }
         }
 
@@ -382,15 +438,9 @@ namespace Sercamcom
         // Формальные параметры: поля структуры ключа day и month
         // Входные данные: дерево
         // Выходные данные: дерево с новым узлом, удовлетворяющее свойствам КЧ дерева
-        public void Insert(byte day, byte month)
+        public void Insert(int code, SaleNode index)
         {
-            if (day == 0 || day > 31 || month == 0 || month > 12 || (day > 29 && month == 2))
-            {
-                Console.WriteLine("Invalid data.");
-                return;
-            }
-
-            Node Z = new Node(day, month);
+            Node Z = new Node(code, index);
             Node Y = nil;
             Node X = root;
 
@@ -399,7 +449,7 @@ namespace Sercamcom
                 Y = X;
                 if (Z.IsEqual(X))
                 {
-                    X.count++;
+                    this.FindNode(code).data.indexList.Add(index);
                     return;
                 }
                 else if (Z.IsLess(X))
@@ -422,23 +472,49 @@ namespace Sercamcom
 
             InsertFixUp(Z); // call method to check for violations and fix
         }
-
-        // Добавляет новый узел в дерево по правилу вставки в бинарное дерево и выводит дерево на экран
-        // Формальные параметры: поля структуры ключа day и month
-        // Входные данные: дерево
-        // Выходные данные: дерево с новым узлом, удовлетворяющее свойствам КЧ дерева,
-        //          и его изображение на экране
-        public void InsertAndDisplay(byte day, byte month)
+        public void Insert(SaleNode index)
         {
-            Console.WriteLine("Inserting {0}.{1}", day, month);
-            this.Insert(day, month);
+            int code = index.GetProductCode();
+            Node Z = new Node(code, index);
+            Node Y = nil;
+            Node X = root;
+
+            while (X != nil)
+            {
+                Y = X;
+                if (Z.IsEqual(X))
+                {
+                    this.FindNode(code).data.indexList.Add(index);
+                    return;
+                }
+                else if (Z.IsLess(X))
+                    X = X.left;
+                else
+                    X = X.right;
+            }
+            Z.parent = Y;
+
+            if (Y == nil)
+                root = Z;
+            else if (Z.IsLess(Y))
+                Y.left = Z;
+            else
+                Y.right = Z;
+
+            Z.left = nil;
+            Z.right = nil;
+            Z.color = Colour.Red; // colour the new node red
+
+            InsertFixUp(Z); // call method to check for violations and fix
+        }
+        public void InsertAndDisplay(int code, SaleNode index)
+        {
+            Console.WriteLine("Inserting {0} ", code);
+            this.Insert(code, index);
             this.DisplayTree();
         }
 
         // Проверяет, нарушены ли свойства КЧ дерева после вставки узла, и исправляет нарушения
-        // Формальные параметры: вставленный узел Z
-        // Входные данные: дерево
-        // Выходные данные: дерево, удовлетворяющее свойствам КЧ дерева
         private void InsertFixUp(Node Z)
         {
             while (Z != root && Z.parent.color == Colour.Red)
@@ -497,11 +573,6 @@ namespace Sercamcom
 
             root.color = Colour.Black; // re-colour the root black as necessary
         }
-
-        // Меняет поддеревья местами
-        // Формальные параметры: узел X, узел Y
-        // Входные данные: дерево
-        // Выходные данные: дерево с изменёнными связями
         private void Transplant(Node X, Node Y)
         {
             if (X.parent == nil)
@@ -513,32 +584,31 @@ namespace Sercamcom
 
             Y.parent = X.parent;
         }
-
-        // Удаляет узел из дерева по правилу удаления в бинарном дереве
-        // Формальные параметры: поля структуры ключа day и month
-        // Входные данные: дерево
-        // Выходные данные: дерево без узла, удовлетворяющее свойствам КЧ дерева
-        public void Delete(byte day, byte month)
+        public SaleNode Delete(SaleNode sale)
         {
-            Node Z = Find(day, month);
-            Delete(Z);
+            Node node = FindNode(sale.GetProductCode());
+            if (node.data.indexList.Count > 1)
+            {
+                node.data.indexList.Remove(sale); // Надо, чтобы оно вернуло значение того нода, что удалило
+                return sale;
+            }
+            Delete(node);
+            return node.data.indexList.Find(x => isEquals(x, sale));
         }
-
-        // Удаляет узел из дерева по правилу удаления в бинарном дереве
-        // Формальные параметры: узел Z дерева
-        // Входные данные: дерево
-        // Выходные данные: дерево без узла, удовлетворяющее свойствам КЧ дерева
+        public bool isEquals(SaleNode salesNode, SaleNode node)
+        {
+            return (salesNode.login == node.login &&
+                    salesNode.address == node.address &&
+                    salesNode.product == node.product &&
+                    salesNode.price == node.price &&
+                    salesNode.typeOfPayment == node.typeOfPayment);
+        }
         public void Delete(Node Z)
         {
             Node Y = Z;
             Node X = nil;
             Colour SavedColor = Y.color;
 
-            if (Z.count > 1)
-            {
-                Z.count--;
-                return;
-            }
             if (Z == nil)
             {
                 Console.WriteLine("Nothing to delete!");
@@ -557,7 +627,7 @@ namespace Sercamcom
             else
             {
                 Y = FindMinimum(Z.left);
-                Console.WriteLine("Minimum {0}.{1} was found.", Y.data.day, Y.data.month);
+                Console.WriteLine("Minimum: {0} ", Y.data.productCode);
                 if (Y == nil)
                 {
                     Console.WriteLine("Node does not have minimum.");
@@ -583,23 +653,6 @@ namespace Sercamcom
             if (SavedColor == Colour.Black)
                 DeleteFixUp(X);
         }
-
-        // Удаляет узел из дерева по правилу удаления в бинарном дереве
-        // Формальные параметры: поля структуры ключа day и month
-        // Входные данные: дерево
-        // Выходные данные: дерево без узла, удовлетворяющее свойствам КЧ дерева,
-        //          и его изображение на экране
-        public void DeleteAndDisplay(byte day, byte month)
-        {
-            Console.WriteLine("Deleting {0}.{1}", day, month);
-            this.Delete(day, month);
-            this.DisplayTree();
-        }
-
-        // Проверяет, нарушены ли свойства КЧ дерева после удаления узла, и исправляет нарушения
-        // Формальные параметры: текущий узел X
-        // Входные данные: дерево
-        // Выходные данные: дерево, удовлетворяющее свойствам КЧ дерева
         private void DeleteFixUp(Node X)
         {
 
