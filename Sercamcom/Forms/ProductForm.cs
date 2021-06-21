@@ -17,6 +17,21 @@ namespace Sercamcom
         public ProductForm()
         {
             InitializeComponent();
+            UpdateTable();
+        }
+
+        private void UpdateTable()
+        {
+            HashTableOA list = new HashTableOA();
+            dataGridView1.Rows.Clear();
+            for (int i = 0; i < list.size_h; i++)
+            {
+                if (list.h_table[i] != null)
+                {
+                    dataGridView1.Rows.Add(list.h_table[i].login, list.h_table[i].product, list.GetHashCode(list.h_table[i].login, list.h_table[i].product), i);
+                }
+            }
+
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -91,6 +106,30 @@ namespace Sercamcom
             MainForm mainScreen = new MainForm { };
             mainScreen.Show();
             this.Close();
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Удалить эту запись из обоих справочников?", "Внимание!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                int rowIndex = dataGridView1.CurrentCell.RowIndex;
+                HashTableOA myTable = new HashTableOA();
+                ListOfSales salesTable = new ListOfSales(myTable);
+                if (dataGridView1.Rows[rowIndex].Cells[0].Value == null) return;
+                string num1 = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
+                string num2 = dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
+                dataGridView1.Rows.RemoveAt(rowIndex);
+                ProductNode nodeforMyList = new ProductNode(num1, num2);
+                salesTable.RemoveAllSalesWithName(nodeforMyList.login, nodeforMyList.product);
+                myTable.Delete(nodeforMyList);
+                UpdateTable();
+            }
+        }
+
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
+            UpdateTable();
         }
     }
 
