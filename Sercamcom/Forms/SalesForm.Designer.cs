@@ -29,6 +29,7 @@ namespace Sercamcom
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SerCamComName = new System.Windows.Forms.Label();
             this.Big_Lable1 = new System.Windows.Forms.Label();
             this.DeleteButton = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@ namespace Sercamcom
             this.CloseBu = new System.Windows.Forms.Button();
             this.HomeButton = new System.Windows.Forms.Button();
             this.HomeButton_Shadow = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DeleteButton_Shadow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddButton_Shadow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchButton_Shadow)).BeginInit();
@@ -75,7 +77,7 @@ namespace Sercamcom
             this.Big_Lable1.Font = new System.Drawing.Font("Candara", 70F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.Big_Lable1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
             this.Big_Lable1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Big_Lable1.Location = new System.Drawing.Point(485, 72);
+            this.Big_Lable1.Location = new System.Drawing.Point(196, 72);
             this.Big_Lable1.Name = "Big_Lable1";
             this.Big_Lable1.Size = new System.Drawing.Size(657, 86);
             this.Big_Lable1.TabIndex = 10;
@@ -99,6 +101,7 @@ namespace Sercamcom
             this.DeleteButton.Size = new System.Drawing.Size(110, 110);
             this.DeleteButton.TabIndex = 18;
             this.DeleteButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolTip1.SetToolTip(this.DeleteButton, "Удалить из таблицы");
             this.DeleteButton.UseVisualStyleBackColor = false;
             this.DeleteButton.MouseEnter += new System.EventHandler(this.DeleteButton_MouseEnter);
             this.DeleteButton.MouseLeave += new System.EventHandler(this.DeleteButton_MouseLeave);
@@ -132,6 +135,7 @@ namespace Sercamcom
             this.AddButton.Size = new System.Drawing.Size(110, 110);
             this.AddButton.TabIndex = 16;
             this.AddButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolTip1.SetToolTip(this.AddButton, "Добавить в таблицу");
             this.AddButton.UseVisualStyleBackColor = false;
             this.AddButton.MouseEnter += new System.EventHandler(this.AddButton_MouseEnter);
             this.AddButton.MouseLeave += new System.EventHandler(this.AddButton_MouseLeave);
@@ -165,6 +169,7 @@ namespace Sercamcom
             this.SearchButton.Size = new System.Drawing.Size(110, 110);
             this.SearchButton.TabIndex = 14;
             this.SearchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolTip1.SetToolTip(this.SearchButton, "Поиск");
             this.SearchButton.UseVisualStyleBackColor = false;
             this.SearchButton.MouseEnter += new System.EventHandler(this.SearchButton_MouseEnter);
             this.SearchButton.MouseLeave += new System.EventHandler(this.SearchButton_MouseLeave);
@@ -198,6 +203,7 @@ namespace Sercamcom
             this.RefreshButton.Size = new System.Drawing.Size(110, 110);
             this.RefreshButton.TabIndex = 12;
             this.RefreshButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolTip1.SetToolTip(this.RefreshButton, "Обновить таблицу");
             this.RefreshButton.UseVisualStyleBackColor = false;
             this.RefreshButton.MouseEnter += new System.EventHandler(this.RefreshButton_MouseEnter);
             this.RefreshButton.MouseLeave += new System.EventHandler(this.RefreshButton_MouseLeave);
@@ -277,6 +283,7 @@ namespace Sercamcom
             this.HomeButton.Size = new System.Drawing.Size(110, 110);
             this.HomeButton.TabIndex = 1;
             this.HomeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolTip1.SetToolTip(this.HomeButton, "Главное меню");
             this.HomeButton.UseVisualStyleBackColor = false;
             this.HomeButton.MouseEnter += new System.EventHandler(this.HomeButton_MouseEnter);
             this.HomeButton.MouseLeave += new System.EventHandler(this.HomeButton_MouseLeave);
@@ -347,5 +354,6 @@ namespace Sercamcom
         private System.Windows.Forms.PictureBox DeleteButton_Shadow;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.PictureBox AddButton_Shadow;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
