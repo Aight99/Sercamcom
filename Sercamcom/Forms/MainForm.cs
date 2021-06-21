@@ -76,5 +76,19 @@ namespace Sercamcom
         {
             MessageBox.Show("Мяу!", "Очень важное сообщение!");
         }
+
+        private void SalesButton_Click(object sender, EventArgs e)
+        {
+            SalesForm saletScreen = new SalesForm { };
+            saletScreen.Show();
+            this.Hide();
+        }
+
+        private void ProductsButton_Click(object sender, EventArgs e)
+        {
+            ProductForm productScreen = new ProductForm { };
+            productScreen.Show();
+            this.Hide();
+        }
     }
 }

@@ -10,16 +10,15 @@ using System.Windows.Forms;
 
 namespace Sercamcom
 {
-    public partial class SalesForm : Form
+    public partial class ProductForm : Form
     {
         private bool mouseDown;
         private Point lastLocation;
-        public SalesForm()
+        public ProductForm()
         {
             InitializeComponent();
         }
 
-        // Borderless Cons
         private void CloseButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -94,4 +93,6 @@ namespace Sercamcom
             this.Close();
         }
     }
+
+
 }

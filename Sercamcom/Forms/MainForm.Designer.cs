@@ -67,6 +67,7 @@ namespace Sercamcom
             this.SalesButton.Text = "Продажи";
             this.SalesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.SalesButton.UseVisualStyleBackColor = false;
+            this.SalesButton.Click += new System.EventHandler(this.SalesButton_Click);
             this.SalesButton.MouseEnter += new System.EventHandler(this.SalesButton_MouseEnter);
             this.SalesButton.MouseLeave += new System.EventHandler(this.SalesButton_MouseLeave);
             // 
@@ -171,6 +172,7 @@ namespace Sercamcom
             this.ProductsButton.Text = "Товары";
             this.ProductsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.ProductsButton.UseVisualStyleBackColor = false;
+            this.ProductsButton.Click += new System.EventHandler(this.ProductsButton_Click);
             this.ProductsButton.MouseEnter += new System.EventHandler(this.ProductsButton_MouseEnter);
             this.ProductsButton.MouseLeave += new System.EventHandler(this.ProductsButton_MouseLeave);
             // 
@@ -236,6 +238,7 @@ namespace Sercamcom
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1200, 720);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SerCamCom";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();

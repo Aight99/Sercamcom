@@ -1,7 +1,7 @@
 ﻿
 namespace Sercamcom
 {
-    partial class SalesForm
+    partial class ProductForm
     {
         /// <summary>
         /// Required designer variable.
@@ -79,9 +79,9 @@ namespace Sercamcom
             this.Big_Lable1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Big_Lable1.Location = new System.Drawing.Point(196, 72);
             this.Big_Lable1.Name = "Big_Lable1";
-            this.Big_Lable1.Size = new System.Drawing.Size(657, 86);
+            this.Big_Lable1.Size = new System.Drawing.Size(675, 86);
             this.Big_Lable1.TabIndex = 10;
-            this.Big_Lable1.Text = "Справочник продаж";
+            this.Big_Lable1.Text = "Справочник товаров";
             // 
             // DeleteButton
             // 
@@ -300,7 +300,7 @@ namespace Sercamcom
             this.HomeButton_Shadow.TabStop = false;
             this.HomeButton_Shadow.Visible = false;
             // 
-            // SalesForm
+            // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -325,7 +325,7 @@ namespace Sercamcom
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1200, 720);
-            this.Name = "SalesForm";
+            this.Name = "ProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SerCamCom";
             ((System.ComponentModel.ISupportInitialize)(this.DeleteButton_Shadow)).EndInit();
