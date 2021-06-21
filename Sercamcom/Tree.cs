@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Sercamcom
 {
@@ -247,12 +248,12 @@ namespace Sercamcom
                     compare++;
                     if (sale.login == login)
                     {
-                        //MessageBox.Show($"Сравнений - {compare}");
+                        MessageBox.Show($"Сравнений - {compare}", "Результаты поиска");
                         return sale;
                     }
                 }
             }
-            //MessageBox.Show($"Сравнений - {compare}");
+            MessageBox.Show($"Сравнений - {compare}", "Результаты поиска");
             return null;
         }
 

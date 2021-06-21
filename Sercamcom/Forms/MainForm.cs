@@ -20,6 +20,13 @@ namespace Sercamcom
             InitializeComponent();
         }
 
+        //private void HashButton_Click(object sender, EventArgs e)
+        //{
+        //    var hashForm = new HashForm(ref rBTreeCar, ref rBTreeYear, ref dataGridView);
+        //    _ = hashForm.ShowDialog();
+        //    hashForm.Dispose();
+        //}
+
 
         // Borderless Cons
         private void CloseButton_Click(object sender, EventArgs e)

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Sercamcom
 {
@@ -67,14 +68,14 @@ namespace Sercamcom
                     string line;
                     if ((line = reader.ReadLine()) == null)
                     {
-                        //MessageBox.Show("No data in file");
+                        MessageBox.Show("Неверные дванные", "Ошибка!");
                         Console.WriteLine("No data in file");
                         return false;
                     }
                     string[] fields = line.Split(new[] { '|' });
                     if (!CheckingLogin(fields[0]))
                     {
-                        //MessageBox.Show("Incorrect data from file");
+                        MessageBox.Show("Неверные дванные", "Ошибка!");
                         Console.WriteLine("Incorrect data from file");
 
                         return false;
@@ -82,7 +83,7 @@ namespace Sercamcom
                     string login = fields[0];
                     if (!CheckingNameOfProduct(fields[1]))
                     {
-                        //MessageBox.Show("Incorrect name of product from file");
+                        MessageBox.Show("Неверные дванные", "Ошибка!");
                         Console.WriteLine("Incorrect name of product from file");
                         return false;
                     }
@@ -133,13 +134,13 @@ namespace Sercamcom
                 }
                 else
                 {
-                    //MessageBox.Show("Incorrect data");
+                    MessageBox.Show("Неверные дванные", "Ошибка!");
                     Console.WriteLine("Incorrect data to input in table");
                 }
             }
             else
             {
-                //MessageBox.Show($"{node.login} is already in table");
+                MessageBox.Show($"{node.login} уже в справочнике", "Ошибка!");
                 Console.WriteLine($"{node.login} is already in table");
             }
         }
@@ -167,13 +168,13 @@ namespace Sercamcom
                 }
                 else
                 {
-                    //MessageBox.Show("Incorrect data");
+                    MessageBox.Show("Неверные дванные", "Ошибка!");
                     Console.WriteLine("Incorrect data to input in table");
                 }
             }
             else
             {
-                //MessageBox.Show($"{node.login} is already in table");
+                MessageBox.Show($"{node.login} уже в справочнике", "Ошибка!");
                 Console.WriteLine($"{node.login} is already in table");
             }
         }

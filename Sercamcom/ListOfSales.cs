@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Sercamcom
 {
@@ -49,7 +50,7 @@ namespace Sercamcom
 
                     if (!hashTable.Search(hashTableNode))
                     {
-                        //MessageBox.Show("This sale isn't in product list");
+                        MessageBox.Show("Нет соответствующей записи в справочнике товаров", "Ошибка!");
                         Console.WriteLine("This sale isn't in product list");
                         return;
                     }
@@ -58,18 +59,18 @@ namespace Sercamcom
                     rbTree.Insert(saleNode.GetProductCode(), saleNode);
 
                     UpdateFile();
-                    //MessageBox.Show("Data added successfully");
+                    MessageBox.Show("Данные были успешно добавлены", "Успех!");
                     Console.WriteLine("Data added successfully");
                 }
                 else
                 {
-                    //MessageBox.Show($"{ saleNode.login} is already in table");
+                    MessageBox.Show($"{ saleNode.login} уже в справочнике", "Ошибка!");
                     Console.WriteLine($"{ saleNode.login} is already in table");
                 }
             }
             else
             {
-                //MessageBox.Show("Incorrect data");
+                MessageBox.Show("Неверные дванные", "Ошибка!");
                 Console.WriteLine("Incorrect data");
             }
 
@@ -114,21 +115,21 @@ namespace Sercamcom
                     string[] fields = line.Split(new[] { '|' });
                     if (!CheckingLogin(fields[0]))
                     {
-                        //MessageBox.Show("Incorrect data");
+                        MessageBox.Show("Неверные дванные", "Ошибка!");
                         Console.WriteLine("Incorrect data from file");
                         continue;
                     }
                     string login = fields[0];
                     if (!CheckingAdress(fields[1]))
                     {
-                        //MessageBox.Show("Incorrect adress");
+                        MessageBox.Show("Неверные дванные", "Ошибка!");
                         Console.WriteLine("Incorrect adress from file");
                         continue;
                     }
                     string location = fields[1];
                     if (!CheckingNameOfProduct(fields[2]))
                     {
-                        //MessageBox.Show("Incorrect name of product");
+                        MessageBox.Show("Неверные дванные", "Ошибка!");
                         Console.WriteLine("Incorrect product from file");
                         continue;
                     }
@@ -136,13 +137,13 @@ namespace Sercamcom
                     int price = Convert.ToInt32(fields[3]);
                     if (!CheckRangeOfPrice(price))
                     {
-                        //MessageBox.Show("Incorrect range of price");
+                        MessageBox.Show("Неверные дванные", "Ошибка!");
                         Console.WriteLine("Incorrect price from file");
                         continue;
                     }
                     if (!CheckTypeOfMethod(fields[4]))
                     {
-                        //MessageBox.Show("Incorrect type of payment");
+                        MessageBox.Show("Неверные дванные", "Ошибка!");
                         Console.WriteLine("Incorrect payment from file");
                         continue;
                     }
@@ -150,7 +151,7 @@ namespace Sercamcom
                     ProductNode nodeforMyList = new ProductNode(fields[0], fields[2]);
                     if (!myTable.Search(nodeforMyList))
                     {
-                        //MessageBox.Show($"there is no { fields[0]} person in hash table");
+                        MessageBox.Show($"Человек с логином { fields[0]} отсутствует в базе", "Ошибка!");
                         Console.WriteLine($"there is no { fields[0]} person in hash table");
                         continue;
                     };
