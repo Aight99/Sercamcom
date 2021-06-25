@@ -20,12 +20,6 @@ namespace Sercamcom
             InitializeComponent();
         }
 
-        //private void HashButton_Click(object sender, EventArgs e)
-        //{
-        //    var hashForm = new HashForm(ref rBTreeCar, ref rBTreeYear, ref dataGridView);
-        //    _ = hashForm.ShowDialog();
-        //    hashForm.Dispose();
-        //}
 
 
         // Borderless Cons
@@ -54,6 +48,7 @@ namespace Sercamcom
         }
 
 
+
         // Selection Effect
         private void SalesButton_MouseEnter(object sender, EventArgs e)
         {
@@ -79,14 +74,14 @@ namespace Sercamcom
 
         private void SalesButton_Click(object sender, EventArgs e)
         {
-            SalesForm saletScreen = new SalesForm { };
+            SalesForm saletScreen = new SalesForm(this);
             saletScreen.Show();
             this.Hide();
         }
 
         private void ProductsButton_Click(object sender, EventArgs e)
         {
-            ProductForm productScreen = new ProductForm { };
+            ProductForm productScreen = new ProductForm(this);
             productScreen.Show();
             this.Hide();
         }

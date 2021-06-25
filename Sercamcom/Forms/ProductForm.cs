@@ -14,21 +14,22 @@ namespace Sercamcom
     {
         private bool mouseDown;
         private Point lastLocation;
-        public ProductForm()
+        private MainForm linkToThePast;
+        public ProductForm(MainForm link)
         {
+            this.linkToThePast = link;
             InitializeComponent();
             UpdateTable();
         }
 
         private void UpdateTable()
         {
-            HashTableOA list = new HashTableOA();
             dataGridView1.Rows.Clear();
-            for (int i = 0; i < list.size_h; i++)
+            for (int i = 0; i < Databank.HashTable.size_h; i++)
             {
-                if (list.h_table[i] != null)
+                if (Databank.HashTable.h_table[i] != null)
                 {
-                    dataGridView1.Rows.Add(list.h_table[i].login, list.h_table[i].product, list.GetHashCode(list.h_table[i].login, list.h_table[i].product), i);
+                    dataGridView1.Rows.Add(Databank.HashTable.h_table[i].login, Databank.HashTable.h_table[i].product, Databank.HashTable.GetHashCode(Databank.HashTable.h_table[i].login, Databank.HashTable.h_table[i].product), i);
                 }
             }
 
@@ -100,11 +101,18 @@ namespace Sercamcom
         {
             DeleteButton_Shadow.Visible = false;
         }
+        private void SaveButton_MouseEnter(object sender, EventArgs e)
+        {
+            SaveButton_Shadow.Visible = true;
+        }
+        private void SaveButton_MouseLeave(object sender, EventArgs e)
+        {
+            SaveButton_Shadow.Visible = false;
+        }
 
         private void HomeButton_Click(object sender, EventArgs e)
         {
-            MainForm mainScreen = new MainForm { };
-            mainScreen.Show();
+            linkToThePast.Show();
             this.Close();
         }
 
@@ -114,15 +122,15 @@ namespace Sercamcom
             if (result == DialogResult.Yes)
             {
                 int rowIndex = dataGridView1.CurrentCell.RowIndex;
-                HashTableOA myTable = new HashTableOA();
-                ListOfSales salesTable = new ListOfSales(myTable);
+                //HashTableOA myTable = new HashTableOA();
+                //ListOfSales salesTable = new ListOfSales(myTable);
                 if (dataGridView1.Rows[rowIndex].Cells[0].Value == null) return;
                 string num1 = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
                 string num2 = dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
                 dataGridView1.Rows.RemoveAt(rowIndex);
                 ProductNode nodeforMyList = new ProductNode(num1, num2);
-                salesTable.RemoveAllSalesWithName(nodeforMyList.login, nodeforMyList.product);
-                myTable.Delete(nodeforMyList);
+                Databank.SalesTable.RemoveAllSalesWithName(nodeforMyList.login, nodeforMyList.product); //
+                Databank.HashTable.Delete(nodeforMyList); //
                 UpdateTable();
             }
         }

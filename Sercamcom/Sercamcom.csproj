@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Databank.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +71,12 @@
     <Compile Include="Forms\SalesForm.Designer.cs">
       <DependentUpon>SalesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchFormHT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchFormHT.Designer.cs">
+      <DependentUpon>SearchFormHT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tree.cs" />
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -89,6 +96,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\SalesForm.resx">
       <DependentUpon>SalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchFormHT.resx">
+      <DependentUpon>SearchFormHT.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\HashTableOA.datasource" />
     <None Include="Properties\Settings.settings">
@@ -139,6 +149,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\refresh-page-option2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-save-file-option-25398.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

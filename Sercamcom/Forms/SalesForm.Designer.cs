@@ -30,29 +30,33 @@ namespace Sercamcom
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesForm));
             this.SerCamComName = new System.Windows.Forms.Label();
             this.Big_Lable1 = new System.Windows.Forms.Label();
-            this.DeleteButton = new System.Windows.Forms.Button();
-            this.DeleteButton_Shadow = new System.Windows.Forms.PictureBox();
-            this.AddButton = new System.Windows.Forms.Button();
-            this.AddButton_Shadow = new System.Windows.Forms.PictureBox();
-            this.SearchButton = new System.Windows.Forms.Button();
-            this.SearchButton_Shadow = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.HomeButton = new System.Windows.Forms.Button();
             this.RefreshButton = new System.Windows.Forms.Button();
-            this.RefreshButton_Shadow = new System.Windows.Forms.PictureBox();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CloseBu = new System.Windows.Forms.Button();
-            this.HomeButton = new System.Windows.Forms.Button();
             this.HomeButton_Shadow = new System.Windows.Forms.PictureBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.DeleteButton_Shadow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddButton_Shadow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchButton_Shadow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RefreshButton_Shadow)).BeginInit();
+            this.RefreshButton_Shadow = new System.Windows.Forms.PictureBox();
+            this.SearchButton_Shadow = new System.Windows.Forms.PictureBox();
+            this.AddButton_Shadow = new System.Windows.Forms.PictureBox();
+            this.DeleteButton_Shadow = new System.Windows.Forms.PictureBox();
+            this.SaveButton_Shadow = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomeButton_Shadow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RefreshButton_Shadow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchButton_Shadow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddButton_Shadow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeleteButton_Shadow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveButton_Shadow)).BeginInit();
             this.SuspendLayout();
             // 
             // SerCamComName
@@ -63,7 +67,7 @@ namespace Sercamcom
             this.SerCamComName.Font = new System.Drawing.Font("Candara", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.SerCamComName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.SerCamComName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SerCamComName.Location = new System.Drawing.Point(12, 0);
+            this.SerCamComName.Location = new System.Drawing.Point(10, 4);
             this.SerCamComName.Name = "SerCamComName";
             this.SerCamComName.Size = new System.Drawing.Size(179, 35);
             this.SerCamComName.TabIndex = 4;
@@ -83,107 +87,29 @@ namespace Sercamcom
             this.Big_Lable1.TabIndex = 10;
             this.Big_Lable1.Text = "Справочник продаж";
             // 
-            // DeleteButton
+            // HomeButton
             // 
-            this.DeleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(150)))), ((int)(((byte)(158)))));
-            this.DeleteButton.BackgroundImage = global::Sercamcom.Properties.Resources.minus_symbol1;
-            this.DeleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.DeleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            this.DeleteButton.FlatAppearance.BorderSize = 0;
-            this.DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            this.DeleteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.DeleteButton.Font = new System.Drawing.Font("Candara", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.DeleteButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.DeleteButton.Location = new System.Drawing.Point(34, 567);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(110, 110);
-            this.DeleteButton.TabIndex = 18;
-            this.DeleteButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.toolTip1.SetToolTip(this.DeleteButton, "Удалить из таблицы");
-            this.DeleteButton.UseVisualStyleBackColor = false;
-            this.DeleteButton.MouseEnter += new System.EventHandler(this.DeleteButton_MouseEnter);
-            this.DeleteButton.MouseLeave += new System.EventHandler(this.DeleteButton_MouseLeave);
-            // 
-            // DeleteButton_Shadow
-            // 
-            this.DeleteButton_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            this.DeleteButton_Shadow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.DeleteButton_Shadow.Location = new System.Drawing.Point(29, 573);
-            this.DeleteButton_Shadow.Name = "DeleteButton_Shadow";
-            this.DeleteButton_Shadow.Size = new System.Drawing.Size(110, 110);
-            this.DeleteButton_Shadow.TabIndex = 19;
-            this.DeleteButton_Shadow.TabStop = false;
-            this.DeleteButton_Shadow.Visible = false;
-            // 
-            // AddButton
-            // 
-            this.AddButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(150)))), ((int)(((byte)(158)))));
-            this.AddButton.BackgroundImage = global::Sercamcom.Properties.Resources.plus_black_symbol1;
-            this.AddButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.AddButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            this.AddButton.FlatAppearance.BorderSize = 0;
-            this.AddButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            this.AddButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.AddButton.Font = new System.Drawing.Font("Candara", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.AddButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.AddButton.Location = new System.Drawing.Point(34, 440);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(110, 110);
-            this.AddButton.TabIndex = 16;
-            this.AddButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.toolTip1.SetToolTip(this.AddButton, "Добавить в таблицу");
-            this.AddButton.UseVisualStyleBackColor = false;
-            this.AddButton.MouseEnter += new System.EventHandler(this.AddButton_MouseEnter);
-            this.AddButton.MouseLeave += new System.EventHandler(this.AddButton_MouseLeave);
-            // 
-            // AddButton_Shadow
-            // 
-            this.AddButton_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            this.AddButton_Shadow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.AddButton_Shadow.Location = new System.Drawing.Point(29, 446);
-            this.AddButton_Shadow.Name = "AddButton_Shadow";
-            this.AddButton_Shadow.Size = new System.Drawing.Size(110, 110);
-            this.AddButton_Shadow.TabIndex = 17;
-            this.AddButton_Shadow.TabStop = false;
-            this.AddButton_Shadow.Visible = false;
-            // 
-            // SearchButton
-            // 
-            this.SearchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(150)))), ((int)(((byte)(158)))));
-            this.SearchButton.BackgroundImage = global::Sercamcom.Properties.Resources.magnifying_glass1;
-            this.SearchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            this.SearchButton.FlatAppearance.BorderSize = 0;
-            this.SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            this.SearchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SearchButton.Font = new System.Drawing.Font("Candara", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.SearchButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.SearchButton.Location = new System.Drawing.Point(34, 315);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(110, 110);
-            this.SearchButton.TabIndex = 14;
-            this.SearchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.toolTip1.SetToolTip(this.SearchButton, "Поиск");
-            this.SearchButton.UseVisualStyleBackColor = false;
-            this.SearchButton.MouseEnter += new System.EventHandler(this.SearchButton_MouseEnter);
-            this.SearchButton.MouseLeave += new System.EventHandler(this.SearchButton_MouseLeave);
-            // 
-            // SearchButton_Shadow
-            // 
-            this.SearchButton_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            this.SearchButton_Shadow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.SearchButton_Shadow.Location = new System.Drawing.Point(29, 321);
-            this.SearchButton_Shadow.Name = "SearchButton_Shadow";
-            this.SearchButton_Shadow.Size = new System.Drawing.Size(110, 110);
-            this.SearchButton_Shadow.TabIndex = 15;
-            this.SearchButton_Shadow.TabStop = false;
-            this.SearchButton_Shadow.Visible = false;
+            this.HomeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(150)))), ((int)(((byte)(158)))));
+            this.HomeButton.BackgroundImage = global::Sercamcom.Properties.Resources.home1;
+            this.HomeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.HomeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HomeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.HomeButton.FlatAppearance.BorderSize = 0;
+            this.HomeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.HomeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.HomeButton.Font = new System.Drawing.Font("Candara", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.HomeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.HomeButton.Location = new System.Drawing.Point(27, 62);
+            this.HomeButton.Name = "HomeButton";
+            this.HomeButton.Size = new System.Drawing.Size(94, 99);
+            this.HomeButton.TabIndex = 1;
+            this.HomeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolTip1.SetToolTip(this.HomeButton, "Главное меню");
+            this.HomeButton.UseVisualStyleBackColor = false;
+            this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
+            this.HomeButton.MouseEnter += new System.EventHandler(this.HomeButton_MouseEnter);
+            this.HomeButton.MouseLeave += new System.EventHandler(this.HomeButton_MouseLeave);
             // 
             // RefreshButton
             // 
@@ -198,26 +124,107 @@ namespace Sercamcom
             this.RefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.RefreshButton.Font = new System.Drawing.Font("Candara", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.RefreshButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.RefreshButton.Location = new System.Drawing.Point(34, 190);
+            this.RefreshButton.Location = new System.Drawing.Point(27, 168);
             this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(110, 110);
-            this.RefreshButton.TabIndex = 12;
+            this.RefreshButton.Size = new System.Drawing.Size(94, 99);
+            this.RefreshButton.TabIndex = 11;
             this.RefreshButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.toolTip1.SetToolTip(this.RefreshButton, "Обновить таблицу");
             this.RefreshButton.UseVisualStyleBackColor = false;
             this.RefreshButton.MouseEnter += new System.EventHandler(this.RefreshButton_MouseEnter);
             this.RefreshButton.MouseLeave += new System.EventHandler(this.RefreshButton_MouseLeave);
             // 
-            // RefreshButton_Shadow
+            // SearchButton
             // 
-            this.RefreshButton_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            this.RefreshButton_Shadow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.RefreshButton_Shadow.Location = new System.Drawing.Point(29, 196);
-            this.RefreshButton_Shadow.Name = "RefreshButton_Shadow";
-            this.RefreshButton_Shadow.Size = new System.Drawing.Size(110, 110);
-            this.RefreshButton_Shadow.TabIndex = 13;
-            this.RefreshButton_Shadow.TabStop = false;
-            this.RefreshButton_Shadow.Visible = false;
+            this.SearchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(150)))), ((int)(((byte)(158)))));
+            this.SearchButton.BackgroundImage = global::Sercamcom.Properties.Resources.magnifying_glass1;
+            this.SearchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.SearchButton.FlatAppearance.BorderSize = 0;
+            this.SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.SearchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SearchButton.Font = new System.Drawing.Font("Candara", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.SearchButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.SearchButton.Location = new System.Drawing.Point(27, 275);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(94, 99);
+            this.SearchButton.TabIndex = 13;
+            this.SearchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolTip1.SetToolTip(this.SearchButton, "Поиск");
+            this.SearchButton.UseVisualStyleBackColor = false;
+            this.SearchButton.MouseEnter += new System.EventHandler(this.SearchButton_MouseEnter);
+            this.SearchButton.MouseLeave += new System.EventHandler(this.SearchButton_MouseLeave);
+            // 
+            // AddButton
+            // 
+            this.AddButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(150)))), ((int)(((byte)(158)))));
+            this.AddButton.BackgroundImage = global::Sercamcom.Properties.Resources.plus_black_symbol1;
+            this.AddButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AddButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.AddButton.FlatAppearance.BorderSize = 0;
+            this.AddButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.AddButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.AddButton.Font = new System.Drawing.Font("Candara", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.AddButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.AddButton.Location = new System.Drawing.Point(27, 383);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(94, 99);
+            this.AddButton.TabIndex = 15;
+            this.AddButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolTip1.SetToolTip(this.AddButton, "Добавить в таблицу");
+            this.AddButton.UseVisualStyleBackColor = false;
+            this.AddButton.MouseEnter += new System.EventHandler(this.AddButton_MouseEnter);
+            this.AddButton.MouseLeave += new System.EventHandler(this.AddButton_MouseLeave);
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(150)))), ((int)(((byte)(158)))));
+            this.DeleteButton.BackgroundImage = global::Sercamcom.Properties.Resources.minus_symbol1;
+            this.DeleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.DeleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.DeleteButton.FlatAppearance.BorderSize = 0;
+            this.DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.DeleteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.DeleteButton.Font = new System.Drawing.Font("Candara", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.DeleteButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.DeleteButton.Location = new System.Drawing.Point(27, 491);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(94, 99);
+            this.DeleteButton.TabIndex = 17;
+            this.DeleteButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolTip1.SetToolTip(this.DeleteButton, "Удалить из таблицы");
+            this.DeleteButton.UseVisualStyleBackColor = false;
+            this.DeleteButton.MouseEnter += new System.EventHandler(this.DeleteButton_MouseEnter);
+            this.DeleteButton.MouseLeave += new System.EventHandler(this.DeleteButton_MouseLeave);
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(150)))), ((int)(((byte)(158)))));
+            this.SaveButton.BackgroundImage = global::Sercamcom.Properties.Resources.free_icon_save_file_option_25398;
+            this.SaveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.SaveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SaveButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.SaveButton.FlatAppearance.BorderSize = 0;
+            this.SaveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.SaveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SaveButton.Font = new System.Drawing.Font("Candara", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.SaveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.SaveButton.Location = new System.Drawing.Point(27, 598);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(94, 99);
+            this.SaveButton.TabIndex = 19;
+            this.SaveButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolTip1.SetToolTip(this.SaveButton, "Сохранить в файл");
+            this.SaveButton.UseVisualStyleBackColor = false;
+            this.SaveButton.MouseEnter += new System.EventHandler(this.SaveButton_MouseEnter);
+            this.SaveButton.MouseLeave += new System.EventHandler(this.SaveButton_MouseLeave);
             // 
             // CloseButton
             // 
@@ -225,7 +232,7 @@ namespace Sercamcom
             this.CloseButton.BackgroundImage = global::Sercamcom.Properties.Resources.remove_symbol;
             this.CloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CloseButton.Location = new System.Drawing.Point(1164, 3);
+            this.CloseButton.Location = new System.Drawing.Point(977, 5);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(30, 30);
             this.CloseButton.TabIndex = 5;
@@ -240,7 +247,7 @@ namespace Sercamcom
             this.pictureBox1.InitialImage = global::Sercamcom.Properties.Resources.logoъ;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1200, 36);
+            this.pictureBox1.Size = new System.Drawing.Size(1012, 40);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ControlBar_MouseDown);
@@ -258,47 +265,78 @@ namespace Sercamcom
             this.CloseBu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.CloseBu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.CloseBu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseBu.Location = new System.Drawing.Point(1950, 62);
+            this.CloseBu.Location = new System.Drawing.Point(1234, 62);
             this.CloseBu.Name = "CloseBu";
             this.CloseBu.Size = new System.Drawing.Size(50, 50);
             this.CloseBu.TabIndex = 2;
             this.CloseBu.UseVisualStyleBackColor = false;
             this.CloseBu.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // HomeButton
-            // 
-            this.HomeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(150)))), ((int)(((byte)(158)))));
-            this.HomeButton.BackgroundImage = global::Sercamcom.Properties.Resources.home1;
-            this.HomeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.HomeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HomeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            this.HomeButton.FlatAppearance.BorderSize = 0;
-            this.HomeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            this.HomeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            this.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.HomeButton.Font = new System.Drawing.Font("Candara", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.HomeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.HomeButton.Location = new System.Drawing.Point(34, 65);
-            this.HomeButton.Name = "HomeButton";
-            this.HomeButton.Size = new System.Drawing.Size(110, 110);
-            this.HomeButton.TabIndex = 1;
-            this.HomeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.toolTip1.SetToolTip(this.HomeButton, "Главное меню");
-            this.HomeButton.UseVisualStyleBackColor = false;
-            this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
-            this.HomeButton.MouseEnter += new System.EventHandler(this.HomeButton_MouseEnter);
-            this.HomeButton.MouseLeave += new System.EventHandler(this.HomeButton_MouseLeave);
-            // 
             // HomeButton_Shadow
             // 
             this.HomeButton_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
             this.HomeButton_Shadow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.HomeButton_Shadow.Location = new System.Drawing.Point(29, 71);
+            this.HomeButton_Shadow.Location = new System.Drawing.Point(22, 67);
             this.HomeButton_Shadow.Name = "HomeButton_Shadow";
-            this.HomeButton_Shadow.Size = new System.Drawing.Size(110, 110);
+            this.HomeButton_Shadow.Size = new System.Drawing.Size(94, 99);
             this.HomeButton_Shadow.TabIndex = 6;
             this.HomeButton_Shadow.TabStop = false;
             this.HomeButton_Shadow.Visible = false;
+            // 
+            // RefreshButton_Shadow
+            // 
+            this.RefreshButton_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.RefreshButton_Shadow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.RefreshButton_Shadow.Location = new System.Drawing.Point(22, 174);
+            this.RefreshButton_Shadow.Name = "RefreshButton_Shadow";
+            this.RefreshButton_Shadow.Size = new System.Drawing.Size(94, 99);
+            this.RefreshButton_Shadow.TabIndex = 12;
+            this.RefreshButton_Shadow.TabStop = false;
+            this.RefreshButton_Shadow.Visible = false;
+            // 
+            // SearchButton_Shadow
+            // 
+            this.SearchButton_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.SearchButton_Shadow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SearchButton_Shadow.Location = new System.Drawing.Point(22, 281);
+            this.SearchButton_Shadow.Name = "SearchButton_Shadow";
+            this.SearchButton_Shadow.Size = new System.Drawing.Size(94, 99);
+            this.SearchButton_Shadow.TabIndex = 14;
+            this.SearchButton_Shadow.TabStop = false;
+            this.SearchButton_Shadow.Visible = false;
+            // 
+            // AddButton_Shadow
+            // 
+            this.AddButton_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.AddButton_Shadow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.AddButton_Shadow.Location = new System.Drawing.Point(22, 388);
+            this.AddButton_Shadow.Name = "AddButton_Shadow";
+            this.AddButton_Shadow.Size = new System.Drawing.Size(94, 99);
+            this.AddButton_Shadow.TabIndex = 16;
+            this.AddButton_Shadow.TabStop = false;
+            this.AddButton_Shadow.Visible = false;
+            // 
+            // DeleteButton_Shadow
+            // 
+            this.DeleteButton_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.DeleteButton_Shadow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.DeleteButton_Shadow.Location = new System.Drawing.Point(22, 496);
+            this.DeleteButton_Shadow.Name = "DeleteButton_Shadow";
+            this.DeleteButton_Shadow.Size = new System.Drawing.Size(94, 99);
+            this.DeleteButton_Shadow.TabIndex = 18;
+            this.DeleteButton_Shadow.TabStop = false;
+            this.DeleteButton_Shadow.Visible = false;
+            // 
+            // SaveButton_Shadow
+            // 
+            this.SaveButton_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
+            this.SaveButton_Shadow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SaveButton_Shadow.Location = new System.Drawing.Point(22, 604);
+            this.SaveButton_Shadow.Name = "SaveButton_Shadow";
+            this.SaveButton_Shadow.Size = new System.Drawing.Size(94, 99);
+            this.SaveButton_Shadow.TabIndex = 20;
+            this.SaveButton_Shadow.TabStop = false;
+            this.SaveButton_Shadow.Visible = false;
             // 
             // SalesForm
             // 
@@ -306,7 +344,9 @@ namespace Sercamcom
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1200, 720);
+            this.ClientSize = new System.Drawing.Size(1012, 731);
+            this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.SaveButton_Shadow);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.DeleteButton_Shadow);
             this.Controls.Add(this.AddButton);
@@ -324,17 +364,19 @@ namespace Sercamcom
             this.Controls.Add(this.HomeButton_Shadow);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(1200, 720);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1012, 731);
             this.Name = "SalesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SerCamCom";
-            ((System.ComponentModel.ISupportInitialize)(this.DeleteButton_Shadow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddButton_Shadow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchButton_Shadow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RefreshButton_Shadow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomeButton_Shadow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RefreshButton_Shadow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchButton_Shadow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddButton_Shadow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeleteButton_Shadow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveButton_Shadow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,14 +390,16 @@ namespace Sercamcom
         private System.Windows.Forms.Button CloseBu;
         private System.Windows.Forms.PictureBox HomeButton_Shadow;
         private System.Windows.Forms.Label Big_Lable1;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button RefreshButton;
         private System.Windows.Forms.PictureBox RefreshButton_Shadow;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.PictureBox SearchButton_Shadow;
-        private System.Windows.Forms.Button DeleteButton;
-        private System.Windows.Forms.PictureBox DeleteButton_Shadow;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.PictureBox AddButton_Shadow;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.PictureBox DeleteButton_Shadow;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.PictureBox SaveButton_Shadow;
     }
 }

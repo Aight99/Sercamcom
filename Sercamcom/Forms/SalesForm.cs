@@ -14,8 +14,10 @@ namespace Sercamcom
     {
         private bool mouseDown;
         private Point lastLocation;
-        public SalesForm()
+        private MainForm linkToThePast;
+        public SalesForm(MainForm link)
         {
+            this.linkToThePast = link;
             InitializeComponent();
         }
 
@@ -86,11 +88,18 @@ namespace Sercamcom
         {
             DeleteButton_Shadow.Visible = false;
         }
+        private void SaveButton_MouseEnter(object sender, EventArgs e)
+        {
+            SaveButton_Shadow.Visible = true;
+        }
+        private void SaveButton_MouseLeave(object sender, EventArgs e)
+        {
+            SaveButton_Shadow.Visible = false;
+        }
 
         private void HomeButton_Click(object sender, EventArgs e)
         {
-            MainForm mainScreen = new MainForm { };
-            mainScreen.Show();
+            linkToThePast.Show();
             this.Close();
         }
     }

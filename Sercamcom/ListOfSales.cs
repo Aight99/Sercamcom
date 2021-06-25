@@ -18,7 +18,7 @@ namespace Sercamcom
 
         public ListOfSales(HashTableOA hashTable)
         {
-            sales = new List<SaleNode> { };
+            sales = new List<SaleNode>();
             rbTree = new Tree();
             InputFromFile(hashTable);
 
@@ -38,7 +38,7 @@ namespace Sercamcom
                 && CheckingNameOfProduct(product) && CheckRangeOfPrice(price) && CheckTypeOfMethod(type))
             {
 
-                SaleNode saleNode = new SaleNode { };
+                SaleNode saleNode = new SaleNode();
                 saleNode.login = login;
                 saleNode.address = address;
                 saleNode.product = product;
@@ -58,7 +58,7 @@ namespace Sercamcom
                     sales.Add(saleNode);
                     rbTree.Insert(saleNode.GetProductCode(), saleNode);
 
-                    UpdateFile();
+                    //UpdateFile();
                     MessageBox.Show("Данные были успешно добавлены", "Успех!");
                     Console.WriteLine("Data added successfully");
                 }
@@ -83,14 +83,14 @@ namespace Sercamcom
                 sales.Remove(rbTree.Delete(saleNode));
                 saleNode = rbTree.FindSale(login, product);
             }
-            UpdateFile();
+            //UpdateFile();
 
         }
         public void RemoveSale(SaleNode saleNode)
         {
             //sales.Remove(saleNode);
             rbTree.Delete(saleNode);
-            UpdateFile();
+            //UpdateFile();
         }
 
         public void CreateRBTree() // Для ввода из файла
@@ -167,7 +167,7 @@ namespace Sercamcom
             }
         }
 
-        public async void UpdateFile()
+        public async void UpdateFile() // Нужен ли Async?
         {
             string path = @"InputSales.txt";
             using (StreamWriter writer = new StreamWriter(path))
