@@ -139,6 +139,19 @@ namespace Sercamcom
         {
             UpdateTable();
         }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            using (SearchFormHT form = new SearchFormHT())
+            {
+               
+                if (form.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+                {
+                    //MessageBox.Show("Опаньки!");
+                }
+
+            }
+        }
     }
 
 

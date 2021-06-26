@@ -281,6 +281,33 @@ namespace Sercamcom
             return null;
         }
 
+        public List<KeyValuePair<ProductNode, int>> SearchAllWithCount(string login, string product)
+        {
+            int i = GetHashCode(login, product);
+            List<KeyValuePair<ProductNode, int>> searchResult = new List<KeyValuePair<ProductNode, int>>();
+            int compare = 0;
+
+            while (h_table[i] != null)
+            {
+                compare++;
+                if (h_table[i].login == login && h_table[i].product == product)
+                {
+                    Console.WriteLine($"Found! Hash-index: {i}; login: {h_table[i].login}; priduct: {h_table[i].product}");
+                    searchResult.Add(new KeyValuePair<ProductNode, int>(h_table[i], i));
+                }
+                i = (i + 1) % size_h;
+            }
+            MessageBox.Show($"Сравнений - {compare}", "Результаты поиска");
+            if (searchResult.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return searchResult;
+            }
+        }
+
         public void ClearTable()
         {
             for (int i = 0; i < size_h; i++) h_table[i] = null;
