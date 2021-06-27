@@ -88,8 +88,7 @@ namespace Sercamcom
         }
         public void RemoveSale(SaleNode saleNode)
         {
-            //sales.Remove(saleNode);
-            rbTree.Delete(saleNode);
+            sales.Remove(rbTree.Delete(saleNode));
             //UpdateFile();
         }
 
@@ -116,21 +115,21 @@ namespace Sercamcom
                     if (!CheckingLogin(fields[0]))
                     {
                         MessageBox.Show("Неверные дванные", "Ошибка!");
-                        Console.WriteLine("Incorrect data from file");
+                        Console.WriteLine("Incorrect data");
                         continue;
                     }
                     string login = fields[0];
                     if (!CheckingAdress(fields[1]))
                     {
                         MessageBox.Show("Неверные дванные", "Ошибка!");
-                        Console.WriteLine("Incorrect adress from file");
+                        Console.WriteLine("Incorrect data");
                         continue;
                     }
                     string location = fields[1];
                     if (!CheckingNameOfProduct(fields[2]))
                     {
                         MessageBox.Show("Неверные дванные", "Ошибка!");
-                        Console.WriteLine("Incorrect product from file");
+                        Console.WriteLine("Incorrect data");
                         continue;
                     }
                     string nameOfProduct = fields[2];
@@ -138,13 +137,13 @@ namespace Sercamcom
                     if (!CheckRangeOfPrice(price))
                     {
                         MessageBox.Show("Неверные дванные", "Ошибка!");
-                        Console.WriteLine("Incorrect price from file");
+                        Console.WriteLine("Incorrect data");
                         continue;
                     }
                     if (!CheckTypeOfMethod(fields[4]))
                     {
                         MessageBox.Show("Неверные дванные", "Ошибка!");
-                        Console.WriteLine("Incorrect payment from file");
+                        Console.WriteLine("Incorrect data");
                         continue;
                     }
                     bool typeOfPayment = ConvertTypeOfMethod(fields[4]);
@@ -212,7 +211,7 @@ namespace Sercamcom
         static bool CheckingNameOfProduct(string s)
         {
             if (s.Length > 50) return false;
-            if ((s[0] >= 'А' && s[0] <= 'Я') || (s[0] >= 'а' && s[0] <= 'я')) // » «
+            if ((s[0] >= 'А' && s[0] <= 'Я') || (s[0] >= 'а' && s[0] <= 'я') || (s[0] >= 'a' && s[0] <= 'z') || (s[0] >= 'A' && s[0] <= 'Z')) // » «
             {
                 for (int i = 1; i < s.Length; i++)
                 {

@@ -60,10 +60,9 @@ namespace Sercamcom
             this.SalesButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SalesButton.Font = new System.Drawing.Font("Candara", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.SalesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.SalesButton.Location = new System.Drawing.Point(140, 358);
-            this.SalesButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SalesButton.Location = new System.Drawing.Point(105, 291);
             this.SalesButton.Name = "SalesButton";
-            this.SalesButton.Size = new System.Drawing.Size(600, 154);
+            this.SalesButton.Size = new System.Drawing.Size(450, 125);
             this.SalesButton.TabIndex = 1;
             this.SalesButton.Text = "Продажи";
             this.SalesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -79,9 +78,8 @@ namespace Sercamcom
             this.pictureBox1.ErrorImage = global::Sercamcom.Properties.Resources.logoъ;
             this.pictureBox1.InitialImage = global::Sercamcom.Properties.Resources.logoъ;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1600, 44);
+            this.pictureBox1.Size = new System.Drawing.Size(1200, 36);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ControlBar_MouseDown);
@@ -96,10 +94,9 @@ namespace Sercamcom
             this.SerCamComName.Font = new System.Drawing.Font("Candara", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.SerCamComName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.SerCamComName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SerCamComName.Location = new System.Drawing.Point(16, 0);
-            this.SerCamComName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SerCamComName.Location = new System.Drawing.Point(12, 0);
             this.SerCamComName.Name = "SerCamComName";
-            this.SerCamComName.Size = new System.Drawing.Size(184, 36);
+            this.SerCamComName.Size = new System.Drawing.Size(179, 35);
             this.SerCamComName.TabIndex = 4;
             this.SerCamComName.Text = "   SerCamCom";
             // 
@@ -109,10 +106,9 @@ namespace Sercamcom
             this.CloseButton.BackgroundImage = global::Sercamcom.Properties.Resources.remove_symbol;
             this.CloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CloseButton.Location = new System.Drawing.Point(1552, 4);
-            this.CloseButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CloseButton.Location = new System.Drawing.Point(1164, 3);
             this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(40, 37);
+            this.CloseButton.Size = new System.Drawing.Size(30, 30);
             this.CloseButton.TabIndex = 5;
             this.CloseButton.TabStop = false;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
@@ -128,10 +124,9 @@ namespace Sercamcom
             this.CloseBu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.CloseBu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.CloseBu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseBu.Location = new System.Drawing.Point(2600, 76);
-            this.CloseBu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CloseBu.Location = new System.Drawing.Point(1950, 62);
             this.CloseBu.Name = "CloseBu";
-            this.CloseBu.Size = new System.Drawing.Size(67, 62);
+            this.CloseBu.Size = new System.Drawing.Size(50, 50);
             this.CloseBu.TabIndex = 2;
             this.CloseBu.UseVisualStyleBackColor = false;
             this.CloseBu.Click += new System.EventHandler(this.CloseButton_Click);
@@ -140,10 +135,9 @@ namespace Sercamcom
             // 
             this.SalesButton_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
             this.SalesButton_Shadow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.SalesButton_Shadow.Location = new System.Drawing.Point(127, 369);
-            this.SalesButton_Shadow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SalesButton_Shadow.Location = new System.Drawing.Point(95, 300);
             this.SalesButton_Shadow.Name = "SalesButton_Shadow";
-            this.SalesButton_Shadow.Size = new System.Drawing.Size(600, 154);
+            this.SalesButton_Shadow.Size = new System.Drawing.Size(450, 125);
             this.SalesButton_Shadow.TabIndex = 6;
             this.SalesButton_Shadow.TabStop = false;
             this.SalesButton_Shadow.Visible = false;
@@ -152,10 +146,9 @@ namespace Sercamcom
             // 
             this.pictureBox2.BackgroundImage = global::Sercamcom.Properties.Resources.logoъ;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(837, 176);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(628, 143);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(747, 619);
+            this.pictureBox2.Size = new System.Drawing.Size(560, 503);
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.DoubleClick += new System.EventHandler(this.pictureBox2_DoubleClick);
@@ -172,10 +165,9 @@ namespace Sercamcom
             this.ProductsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ProductsButton.Font = new System.Drawing.Font("Candara", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.ProductsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.ProductsButton.Location = new System.Drawing.Point(140, 556);
-            this.ProductsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProductsButton.Location = new System.Drawing.Point(105, 452);
             this.ProductsButton.Name = "ProductsButton";
-            this.ProductsButton.Size = new System.Drawing.Size(600, 154);
+            this.ProductsButton.Size = new System.Drawing.Size(450, 125);
             this.ProductsButton.TabIndex = 8;
             this.ProductsButton.Text = "Товары";
             this.ProductsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -188,10 +180,9 @@ namespace Sercamcom
             // 
             this.ProductsButton_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
             this.ProductsButton_Shadow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ProductsButton_Shadow.Location = new System.Drawing.Point(127, 567);
-            this.ProductsButton_Shadow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProductsButton_Shadow.Location = new System.Drawing.Point(95, 461);
             this.ProductsButton_Shadow.Name = "ProductsButton_Shadow";
-            this.ProductsButton_Shadow.Size = new System.Drawing.Size(600, 154);
+            this.ProductsButton_Shadow.Size = new System.Drawing.Size(450, 125);
             this.ProductsButton_Shadow.TabIndex = 9;
             this.ProductsButton_Shadow.TabStop = false;
             this.ProductsButton_Shadow.Visible = false;
@@ -204,8 +195,7 @@ namespace Sercamcom
             this.Big_Lable1.Font = new System.Drawing.Font("Candara", 70F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.Big_Lable1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
             this.Big_Lable1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Big_Lable1.Location = new System.Drawing.Point(217, 161);
-            this.Big_Lable1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Big_Lable1.Location = new System.Drawing.Point(163, 131);
             this.Big_Lable1.Name = "Big_Lable1";
             this.Big_Lable1.Size = new System.Drawing.Size(345, 86);
             this.Big_Lable1.TabIndex = 10;
@@ -219,8 +209,7 @@ namespace Sercamcom
             this.label1.Font = new System.Drawing.Font("Candara", 70F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(176, 235);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(132, 191);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(398, 86);
             this.label1.TabIndex = 11;
@@ -228,11 +217,11 @@ namespace Sercamcom
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1600, 886);
+            this.ClientSize = new System.Drawing.Size(1200, 720);
             this.Controls.Add(this.Big_Lable1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ProductsButton);
@@ -247,8 +236,7 @@ namespace Sercamcom
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimumSize = new System.Drawing.Size(1600, 886);
+            this.MinimumSize = new System.Drawing.Size(1200, 720);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SerCamCom";

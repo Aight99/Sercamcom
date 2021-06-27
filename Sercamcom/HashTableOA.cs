@@ -76,7 +76,7 @@ namespace Sercamcom
                     if (!CheckingLogin(fields[0]))
                     {
                         MessageBox.Show("Неверные дванные", "Ошибка!");
-                        Console.WriteLine("Incorrect data from file");
+                        Console.WriteLine("Incorrect data");
 
                         return false;
                     }
@@ -84,7 +84,7 @@ namespace Sercamcom
                     if (!CheckingNameOfProduct(fields[1]))
                     {
                         MessageBox.Show("Неверные дванные", "Ошибка!");
-                        Console.WriteLine("Incorrect name of product from file");
+                        Console.WriteLine("Incorrect data");
                         return false;
                     }
                     ProductNode saleNode = new ProductNode();
@@ -135,7 +135,7 @@ namespace Sercamcom
                 else
                 {
                     MessageBox.Show("Неверные дванные", "Ошибка!");
-                    Console.WriteLine("Incorrect data to input in table");
+                    Console.WriteLine("Incorrect data");
                 }
             }
             else
@@ -145,9 +145,9 @@ namespace Sercamcom
             }
         }
 
-        public void Add(ProductNode node)
+        public bool Add(ProductNode node)
         {
-            if (Search(node.login, node.product) == null)
+            if (Search(node.login, node.product) == null)  ///////// А надо ли?
             {
                 if (CheckingLogin(node.login) && CheckingNameOfProduct(node.product))
                 {
@@ -165,17 +165,20 @@ namespace Sercamcom
                     }
                     h_table[j] = node;
                     //UpdateFile();
+                    return true;
                 }
                 else
                 {
                     MessageBox.Show("Неверные дванные", "Ошибка!");
-                    Console.WriteLine("Incorrect data to input in table");
+                    Console.WriteLine("Incorrect data");
+                    return false;
                 }
             }
             else
             {
-                MessageBox.Show($"{node.login} уже в справочнике", "Ошибка!");
+                MessageBox.Show($"{node.login} уже в справочнике", "Ошибка!");  ///////// А надо ли?
                 Console.WriteLine($"{node.login} is already in table");
+                return false;
             }
         }
 
@@ -322,7 +325,6 @@ namespace Sercamcom
                 if (h_table[i] != null)
                 {
                     Console.WriteLine($"Hash-index: {i}; login: {h_table[i].login}; priduct: {h_table[i].product}; {GetHashCode(h_table[i])}");
-
                 }
                 else
                 {
@@ -335,7 +337,7 @@ namespace Sercamcom
         static bool CheckingNameOfProduct(string s)
         {
             if (s.Length > 50) return false;
-            if ((s[0] >= 'А' && s[0] <= 'Я') || (s[0] >= 'а' && s[0] <= 'я')) // » «
+            if ((s[0] >= 'А' && s[0] <= 'Я') || (s[0] >= 'а' && s[0] <= 'я') ||  (s[0] >= 'a' && s[0] <= 'z') || (s[0] >= 'A' && s[0] <= 'Z')) // » «
             {
                 for (int i = 1; i < s.Length; i++)
                 {

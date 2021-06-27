@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sercamcom
 {
-    public partial class SearchFormHT : Form
+    public partial class SearchFormMainList : Form
     {
-        public SearchFormHT()
+        public SearchFormMainList()
         {
             InitializeComponent();
         }
@@ -22,14 +22,21 @@ namespace Sercamcom
             string login = loginBox.Text;
             string product = productBox.Text;
 
-            var result = Databank.HashTable.SearchAllWithCount(login, product);
-            dataGrid.Rows.Clear();
+            var result = Databank.SalesTable.rbTree.FindSaleWithCount(login, product);
+            dataGridView1.Rows.Clear();
 
             if (result != null)
             {
                 for (int i = 0; i < result.Count; i++)
                 {
-                    dataGrid.Rows.Add(result[i].Key.login, result[i].Key.product, Databank.HashTable.GetHashCode(result[i].Key.login, result[i].Key.product), result[i].Value);
+                    if (result[i].typeOfPayment)
+                    {
+                        dataGridView1.Rows.Add(result[i].login, result[i].address, result[i].product, result[i].price, "наличный");
+                    }
+                    else
+                    {
+                        dataGridView1.Rows.Add(result[i].login, result[i].address, result[i].product, result[i].price, "безналичный");
+                    }
                 }
             }
         }

@@ -32,9 +32,10 @@ namespace Sercamcom
                     dataGridView1.Rows.Add(Databank.HashTable.h_table[i].login, Databank.HashTable.h_table[i].product, Databank.HashTable.GetHashCode(Databank.HashTable.h_table[i].login, Databank.HashTable.h_table[i].product), i);
                 }
             }
-
         }
 
+
+        // Borderless Cons
         private void CloseButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -110,12 +111,13 @@ namespace Sercamcom
             SaveButton_Shadow.Visible = false;
         }
 
+
+        // Clicks
         private void HomeButton_Click(object sender, EventArgs e)
         {
             linkToThePast.Show();
             this.Close();
         }
-
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Удалить эту запись из обоих справочников?", "Внимание!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -128,18 +130,17 @@ namespace Sercamcom
                 string num1 = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
                 string num2 = dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
                 dataGridView1.Rows.RemoveAt(rowIndex);
+
                 ProductNode nodeforMyList = new ProductNode(num1, num2);
                 Databank.SalesTable.RemoveAllSalesWithName(nodeforMyList.login, nodeforMyList.product); //
                 Databank.HashTable.Delete(nodeforMyList); //
                 UpdateTable();
             }
         }
-
         private void RefreshButton_Click(object sender, EventArgs e)
         {
             UpdateTable();
         }
-
         private void SearchButton_Click(object sender, EventArgs e)
         {
             using (SearchFormHT form = new SearchFormHT())
@@ -148,13 +149,17 @@ namespace Sercamcom
                 {
                     //MessageBox.Show("Опаньки!");
                 }
-
             }
         }
-
         private void AddButton_Click(object sender, EventArgs e)
         {
-
+            using (AddFormHT form = new AddFormHT())
+            {
+                if (form.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+                {
+                    UpdateTable();
+                }
+            }
         }
     }
 

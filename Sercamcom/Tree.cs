@@ -217,8 +217,48 @@ namespace Sercamcom
             return null;
         }
 
-        public SaleNode FindSaleWithCount(string login, string product)
+        //public SaleNode FindSaleWithCount(string login, string product)
+        //{
+        //    int compare = 0;
+        //    int code = 0;
+        //    for (int i = 0; i < product.Length; i++)
+        //    {
+        //        code += (int)product[i];
+        //    }
+        //    bool isFound = false;
+        //    Node temp = root;
+        //    Node node = new Node(code);
+
+        //    while (!isFound)
+        //    {
+        //        compare++;
+        //        if (temp == nil)
+        //            break;
+        //        if (node.IsLess(temp))
+        //            temp = temp.left;
+        //        else if (node.IsMore(temp))
+        //            temp = temp.right;
+        //        else
+        //            isFound = true;
+        //    }
+        //    if (isFound)
+        //    {
+        //        foreach (var sale in temp.data.indexList)
+        //        {
+        //            compare++;
+        //            if (sale.login == login)
+        //            {
+        //                MessageBox.Show($"Сравнений - {compare}", "Результаты поиска");
+        //                return sale;
+        //            }
+        //        }
+        //    }
+        //    MessageBox.Show($"Сравнений - {compare}", "Результаты поиска");
+        //    return null;
+        //}
+        public List<SaleNode> FindSaleWithCount(string login, string product)
         {
+            List<SaleNode> result = new List<SaleNode>();
             int compare = 0;
             int code = 0;
             for (int i = 0; i < product.Length; i++)
@@ -248,14 +288,21 @@ namespace Sercamcom
                     compare++;
                     if (sale.login == login)
                     {
-                        MessageBox.Show($"Сравнений - {compare}", "Результаты поиска");
-                        return sale;
+                        result.Add(sale);
                     }
                 }
             }
             MessageBox.Show($"Сравнений - {compare}", "Результаты поиска");
-            return null;
+            if (result.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return result;
+            }
         }
+
 
         public Node FindNode(int code)
         {

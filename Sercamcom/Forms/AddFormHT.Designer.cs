@@ -1,7 +1,7 @@
 ﻿
 namespace Sercamcom
 {
-    partial class SearchFormHT
+    partial class AddFormHT
     {
         /// <summary>
         /// Required designer variable.
@@ -29,27 +29,15 @@ namespace Sercamcom
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchFormHT));
             this.Search = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
             this.Big_Lable1 = new System.Windows.Forms.Label();
             this.productBox = new System.Windows.Forms.TextBox();
             this.loginBox = new System.Windows.Forms.TextBox();
-            this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hash1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hash2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Cancel_Shadow = new System.Windows.Forms.PictureBox();
             this.Search_Shadow = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cancel_Shadow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Search_Shadow)).BeginInit();
             this.SuspendLayout();
@@ -66,11 +54,11 @@ namespace Sercamcom
             this.Search.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Search.Font = new System.Drawing.Font("Candara", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.Search.Location = new System.Drawing.Point(531, 527);
+            this.Search.Location = new System.Drawing.Point(539, 276);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(169, 58);
             this.Search.TabIndex = 10;
-            this.Search.Text = "Искать";
+            this.Search.Text = "Добавить";
             this.Search.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Search.UseVisualStyleBackColor = false;
             this.Search.Click += new System.EventHandler(this.Search_Click);
@@ -90,7 +78,7 @@ namespace Sercamcom
             this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Cancel.Font = new System.Drawing.Font("Candara", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Cancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.Cancel.Location = new System.Drawing.Point(346, 527);
+            this.Cancel.Location = new System.Drawing.Point(354, 276);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(169, 58);
             this.Cancel.TabIndex = 12;
@@ -110,17 +98,17 @@ namespace Sercamcom
             this.Big_Lable1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Big_Lable1.Location = new System.Drawing.Point(12, 9);
             this.Big_Lable1.Name = "Big_Lable1";
-            this.Big_Lable1.Size = new System.Drawing.Size(206, 78);
+            this.Big_Lable1.Size = new System.Drawing.Size(379, 78);
             this.Big_Lable1.TabIndex = 14;
-            this.Big_Lable1.Text = "Поиск";
+            this.Big_Lable1.Text = "Добавление";
             // 
             // productBox
             // 
             this.productBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
             this.productBox.Font = new System.Drawing.Font("Candara", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.productBox.Location = new System.Drawing.Point(340, 90);
+            this.productBox.Location = new System.Drawing.Point(22, 181);
             this.productBox.Name = "productBox";
-            this.productBox.Size = new System.Drawing.Size(295, 53);
+            this.productBox.Size = new System.Drawing.Size(658, 53);
             this.productBox.TabIndex = 15;
             this.productBox.TextChanged += new System.EventHandler(this.productBox_TextChanged);
             // 
@@ -128,89 +116,11 @@ namespace Sercamcom
             // 
             this.loginBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
             this.loginBox.Font = new System.Drawing.Font("Candara", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loginBox.Location = new System.Drawing.Point(25, 90);
+            this.loginBox.Location = new System.Drawing.Point(22, 108);
             this.loginBox.Name = "loginBox";
-            this.loginBox.Size = new System.Drawing.Size(295, 53);
+            this.loginBox.Size = new System.Drawing.Size(658, 53);
             this.loginBox.TabIndex = 16;
             this.loginBox.TextChanged += new System.EventHandler(this.loginBox_TextChanged);
-            // 
-            // dataGrid
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(150)))), ((int)(((byte)(158)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Candara", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.dataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(150)))), ((int)(((byte)(158)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Candara", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Login,
-            this.Product,
-            this.Hash1,
-            this.Hash2});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(150)))), ((int)(((byte)(158)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Candara", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGrid.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGrid.GridColor = System.Drawing.Color.Black;
-            this.dataGrid.Location = new System.Drawing.Point(25, 166);
-            this.dataGrid.Name = "dataGrid";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(150)))), ((int)(((byte)(158)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Candara", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGrid.RowHeadersWidth = 51;
-            this.dataGrid.RowTemplate.Height = 40;
-            this.dataGrid.Size = new System.Drawing.Size(675, 355);
-            this.dataGrid.TabIndex = 21;
-            // 
-            // Login
-            // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(150)))), ((int)(((byte)(158)))));
-            this.Login.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Login.HeaderText = "Логин";
-            this.Login.MinimumWidth = 6;
-            this.Login.Name = "Login";
-            this.Login.Width = 200;
-            // 
-            // Product
-            // 
-            this.Product.HeaderText = "Товар";
-            this.Product.MinimumWidth = 6;
-            this.Product.Name = "Product";
-            this.Product.Width = 200;
-            // 
-            // Hash1
-            // 
-            this.Hash1.HeaderText = "Хеш 1";
-            this.Hash1.MinimumWidth = 6;
-            this.Hash1.Name = "Hash1";
-            this.Hash1.Width = 110;
-            // 
-            // Hash2
-            // 
-            this.Hash2.HeaderText = "Хеш 2";
-            this.Hash2.MinimumWidth = 6;
-            this.Hash2.Name = "Hash2";
-            this.Hash2.Width = 110;
             // 
             // label2
             // 
@@ -221,7 +131,7 @@ namespace Sercamcom
             this.label2.Font = new System.Drawing.Font("Candara", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(346, 99);
+            this.label2.Location = new System.Drawing.Point(28, 190);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(227, 36);
             this.label2.TabIndex = 23;
@@ -236,7 +146,7 @@ namespace Sercamcom
             this.label1.Font = new System.Drawing.Font("Candara", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(31, 98);
+            this.label1.Location = new System.Drawing.Point(28, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 36);
             this.label1.TabIndex = 24;
@@ -246,7 +156,7 @@ namespace Sercamcom
             // 
             this.Cancel_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
             this.Cancel_Shadow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Cancel_Shadow.Location = new System.Drawing.Point(339, 532);
+            this.Cancel_Shadow.Location = new System.Drawing.Point(347, 281);
             this.Cancel_Shadow.Name = "Cancel_Shadow";
             this.Cancel_Shadow.Size = new System.Drawing.Size(169, 58);
             this.Cancel_Shadow.TabIndex = 13;
@@ -257,22 +167,21 @@ namespace Sercamcom
             // 
             this.Search_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
             this.Search_Shadow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Search_Shadow.Location = new System.Drawing.Point(524, 532);
+            this.Search_Shadow.Location = new System.Drawing.Point(532, 281);
             this.Search_Shadow.Name = "Search_Shadow";
             this.Search_Shadow.Size = new System.Drawing.Size(169, 58);
             this.Search_Shadow.TabIndex = 11;
             this.Search_Shadow.TabStop = false;
             this.Search_Shadow.Visible = false;
             // 
-            // SearchFormHT
+            // AddFormHT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.ClientSize = new System.Drawing.Size(720, 597);
+            this.ClientSize = new System.Drawing.Size(720, 347);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.loginBox);
             this.Controls.Add(this.productBox);
             this.Controls.Add(this.Big_Lable1);
@@ -281,11 +190,9 @@ namespace Sercamcom
             this.Controls.Add(this.Search);
             this.Controls.Add(this.Search_Shadow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "SearchFormHT";
+            this.Name = "AddFormHT";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Поиск";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
+            this.Text = "Добавление";
             ((System.ComponentModel.ISupportInitialize)(this.Cancel_Shadow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Search_Shadow)).EndInit();
             this.ResumeLayout(false);
@@ -302,11 +209,6 @@ namespace Sercamcom
         private System.Windows.Forms.Label Big_Lable1;
         private System.Windows.Forms.TextBox productBox;
         private System.Windows.Forms.TextBox loginBox;
-        private System.Windows.Forms.DataGridView dataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Login;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Hash1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Hash2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }

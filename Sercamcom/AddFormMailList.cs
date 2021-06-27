@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sercamcom
 {
-    public partial class SearchFormHT : Form
+    public partial class AddFormMailList : Form
     {
-        public SearchFormHT()
+        public AddFormMailList()
         {
             InitializeComponent();
         }
@@ -22,15 +22,9 @@ namespace Sercamcom
             string login = loginBox.Text;
             string product = productBox.Text;
 
-            var result = Databank.HashTable.SearchAllWithCount(login, product);
-            dataGrid.Rows.Clear();
-
-            if (result != null)
+            if (Databank.HashTable.Add(new ProductNode(login, product)))
             {
-                for (int i = 0; i < result.Count; i++)
-                {
-                    dataGrid.Rows.Add(result[i].Key.login, result[i].Key.product, Databank.HashTable.GetHashCode(result[i].Key.login, result[i].Key.product), result[i].Value);
-                }
+                MessageBox.Show("Запись добавлена", "Успех");
             }
         }
 
@@ -50,6 +44,7 @@ namespace Sercamcom
         {
             Cancel_Shadow.Visible = false;
         }
+
 
         private void loginBox_TextChanged(object sender, EventArgs e)
         {
@@ -72,6 +67,52 @@ namespace Sercamcom
             else
             {
                 label2.Visible = false;
+            }
+        }
+
+        private void priceBox_TextChanged(object sender, EventArgs e)
+        {
+            if (priceBox.Text == "")
+            {
+                label3.Visible = true;
+            }
+            else
+            {
+                label3.Visible = false;
+            }
+        }
+
+        private void typeBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label4.Visible = false;
+        }
+        private void typeBox_TextChanged(object sender, EventArgs e)
+        {
+            if (typeBox.Text == "")
+            {
+                
+                label4.Visible = true;
+            }
+            else
+            {
+                label4.Visible = false;
+            }
+        }
+
+        private void addrBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label5.Visible = false;
+        }
+        private void addrBox_TextChanged(object sender, EventArgs e)
+        {
+            if (addrBox.Text == "")
+            {
+
+                label5.Visible = true;
+            }
+            else
+            {
+                label5.Visible = false;
             }
         }
     }
