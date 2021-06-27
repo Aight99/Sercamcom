@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddFormHT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFormHT.Designer.cs">
+      <DependentUpon>AddFormHT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Databank.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -78,6 +84,9 @@
       <DependentUpon>SearchFormHT.cs</DependentUpon>
     </Compile>
     <Compile Include="Tree.cs" />
+    <EmbeddedResource Include="AddFormHT.resx">
+      <DependentUpon>AddFormHT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

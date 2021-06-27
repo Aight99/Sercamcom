@@ -144,13 +144,17 @@ namespace Sercamcom
         {
             using (SearchFormHT form = new SearchFormHT())
             {
-               
                 if (form.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
                 {
                     //MessageBox.Show("Опаньки!");
                 }
 
             }
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

@@ -46,6 +46,10 @@ namespace Sercamcom
             this.RefreshButton = new System.Windows.Forms.Button();
             this.HomeButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hash1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hash2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SaveButton_Shadow = new System.Windows.Forms.PictureBox();
             this.DeleteButton_Shadow = new System.Windows.Forms.PictureBox();
             this.AddButton_Shadow = new System.Windows.Forms.PictureBox();
@@ -55,10 +59,6 @@ namespace Sercamcom
             this.CloseButton = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CloseBu = new System.Windows.Forms.Button();
-            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hash1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hash2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveButton_Shadow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeleteButton_Shadow)).BeginInit();
@@ -165,6 +165,7 @@ namespace Sercamcom
             this.AddButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.toolTip1.SetToolTip(this.AddButton, "Добавить в таблицу");
             this.AddButton.UseVisualStyleBackColor = false;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             this.AddButton.MouseEnter += new System.EventHandler(this.AddButton_MouseEnter);
             this.AddButton.MouseLeave += new System.EventHandler(this.AddButton_MouseLeave);
             // 
@@ -288,6 +289,40 @@ namespace Sercamcom
             this.dataGridView1.Size = new System.Drawing.Size(669, 506);
             this.dataGridView1.TabIndex = 20;
             // 
+            // Login
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(150)))), ((int)(((byte)(158)))));
+            this.Login.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Login.HeaderText = "Логин";
+            this.Login.MinimumWidth = 6;
+            this.Login.Name = "Login";
+            this.Login.ReadOnly = true;
+            this.Login.Width = 200;
+            // 
+            // Product
+            // 
+            this.Product.HeaderText = "Товар";
+            this.Product.MinimumWidth = 6;
+            this.Product.Name = "Product";
+            this.Product.ReadOnly = true;
+            this.Product.Width = 200;
+            // 
+            // Hash1
+            // 
+            this.Hash1.HeaderText = "Хеш 1";
+            this.Hash1.MinimumWidth = 6;
+            this.Hash1.Name = "Hash1";
+            this.Hash1.ReadOnly = true;
+            this.Hash1.Width = 110;
+            // 
+            // Hash2
+            // 
+            this.Hash2.HeaderText = "Хеш 2";
+            this.Hash2.MinimumWidth = 6;
+            this.Hash2.Name = "Hash2";
+            this.Hash2.ReadOnly = true;
+            this.Hash2.Width = 110;
+            // 
             // SaveButton_Shadow
             // 
             this.SaveButton_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(172)))), ((int)(((byte)(55)))));
@@ -399,40 +434,6 @@ namespace Sercamcom
             this.CloseBu.TabIndex = 2;
             this.CloseBu.UseVisualStyleBackColor = false;
             this.CloseBu.Click += new System.EventHandler(this.CloseButton_Click);
-            // 
-            // Login
-            // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(150)))), ((int)(((byte)(158)))));
-            this.Login.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Login.HeaderText = "Логин";
-            this.Login.MinimumWidth = 6;
-            this.Login.Name = "Login";
-            this.Login.ReadOnly = true;
-            this.Login.Width = 200;
-            // 
-            // Product
-            // 
-            this.Product.HeaderText = "Товар";
-            this.Product.MinimumWidth = 6;
-            this.Product.Name = "Product";
-            this.Product.ReadOnly = true;
-            this.Product.Width = 200;
-            // 
-            // Hash1
-            // 
-            this.Hash1.HeaderText = "Хеш 1";
-            this.Hash1.MinimumWidth = 6;
-            this.Hash1.Name = "Hash1";
-            this.Hash1.ReadOnly = true;
-            this.Hash1.Width = 110;
-            // 
-            // Hash2
-            // 
-            this.Hash2.HeaderText = "Хеш 2";
-            this.Hash2.MinimumWidth = 6;
-            this.Hash2.Name = "Hash2";
-            this.Hash2.ReadOnly = true;
-            this.Hash2.Width = 110;
             // 
             // ProductForm
             // 
