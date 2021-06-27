@@ -25,6 +25,17 @@ namespace Sercamcom
         // Borderless Cons
         private void CloseButton_Click(object sender, EventArgs e)
         {
+            if (!Databank.IsSaved)
+            {
+                var result = MessageBox.Show("Есть несохранённые измениня! Сохранить перед закрытием?", "Внимание!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    Databank.IsSaved = true;
+                    Databank.HashTable.UpdateFile();
+                    Databank.SalesTable.UpdateFile();
+                    MessageBox.Show("Данные сохранены!", "Успех");
+                }
+            }
             Application.Exit();
         }
         private void ControlBar_MouseDown(object sender, MouseEventArgs e)

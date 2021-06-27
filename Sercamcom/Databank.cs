@@ -10,10 +10,12 @@ namespace Sercamcom
     {
         public static HashTableOA HashTable;
         public static ListOfSales SalesTable;
+        public static bool IsSaved;
         static Databank()
         {
             HashTable = new HashTableOA();
             SalesTable = new ListOfSales(HashTable);
+            IsSaved = true;
         }
     }
 }

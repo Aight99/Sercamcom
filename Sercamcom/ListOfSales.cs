@@ -21,17 +21,9 @@ namespace Sercamcom
             sales = new List<SaleNode>();
             rbTree = new Tree();
             InputFromFile(hashTable);
-
         }
-        //public ListOfSales() // TO DELETE
-        //{
-        //    sales = new List<SaleNode> { };
-        //    rbTree = new Tree();
-        //    InputFromFile(hashTable);
 
-        //}
-
-        public void AddNewSale(HashTableOA hashTable, string login, string address, string product, int price, string type)
+        public bool AddNewSale(HashTableOA hashTable, string login, string address, string product, int price, string type)
         {
 
             if (CheckingAdress(address) && CheckingLogin(login)
@@ -52,26 +44,28 @@ namespace Sercamcom
                     {
                         MessageBox.Show("Нет соответствующей записи в справочнике товаров", "Ошибка!");
                         Console.WriteLine("This sale isn't in product list");
-                        return;
+                        return false;
                     }
 
                     sales.Add(saleNode);
                     rbTree.Insert(saleNode.GetProductCode(), saleNode);
 
-                    //UpdateFile();
-                    MessageBox.Show("Данные были успешно добавлены", "Успех!");
+                    Databank.IsSaved = false;
                     Console.WriteLine("Data added successfully");
+                    return true;
                 }
                 else
                 {
                     MessageBox.Show($"{ saleNode.login} уже в справочнике", "Ошибка!");
                     Console.WriteLine($"{ saleNode.login} is already in table");
+                    return false;
                 }
             }
             else
             {
                 MessageBox.Show("Неверные дванные", "Ошибка!");
                 Console.WriteLine("Incorrect data");
+                return false;
             }
 
         }
@@ -83,13 +77,13 @@ namespace Sercamcom
                 sales.Remove(rbTree.Delete(saleNode));
                 saleNode = rbTree.FindSale(login, product);
             }
-            //UpdateFile();
+            Databank.IsSaved = false;
 
         }
         public void RemoveSale(SaleNode saleNode)
         {
             sales.Remove(rbTree.Delete(saleNode));
-            //UpdateFile();
+            Databank.IsSaved = false;
         }
 
         public void CreateRBTree() // Для ввода из файла
@@ -166,7 +160,7 @@ namespace Sercamcom
             }
         }
 
-        public async void UpdateFile() // Нужен ли Async?
+        public void UpdateFile()
         {
             string path = @"InputSales.txt";
             using (StreamWriter writer = new StreamWriter(path))
@@ -176,7 +170,7 @@ namespace Sercamcom
                     string type = (a.typeOfPayment ? "безналичный" : "наличный");
                     string temp = "";
                     temp += a.login + "|" + a.address + "|" + a.product + "|" + a.price + "|" + type + "\r\n";
-                    await writer.WriteAsync(temp);
+                    writer.Write(temp);
                 }
             }
         }

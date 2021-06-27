@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddFormMailList.cs">
+    <Compile Include="Forms\AddFormMailList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFormMailList.Designer.cs">
+    <Compile Include="Forms\AddFormMailList.Designer.cs">
       <DependentUpon>AddFormMailList.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AddFormHT.cs">
@@ -96,7 +96,7 @@
       <DependentUpon>SearchFormMainList.cs</DependentUpon>
     </Compile>
     <Compile Include="Tree.cs" />
-    <EmbeddedResource Include="AddFormMailList.resx">
+    <EmbeddedResource Include="Forms\AddFormMailList.resx">
       <DependentUpon>AddFormMailList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddFormHT.resx">

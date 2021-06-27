@@ -21,8 +21,11 @@ namespace Sercamcom
         {
             string login = loginBox.Text;
             string product = productBox.Text;
+            string price = priceBox.Text;
+            string type = typeBox.Text;
+            string addr = addrBox.Text;
 
-            if (Databank.HashTable.Add(new ProductNode(login, product)))
+            if (Databank.SalesTable.AddNewSale(Databank.HashTable, login, addr, product, Int32.Parse(price), type))
             {
                 MessageBox.Show("Запись добавлена", "Успех");
             }

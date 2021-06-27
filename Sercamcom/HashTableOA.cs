@@ -95,7 +95,7 @@ namespace Sercamcom
                 return true;
             }
         }
-        private async void UpdateFile() // Убрать Async
+        public void UpdateFile() 
         {
             string path = @"InputProducts.txt";
             using (StreamWriter writer = new StreamWriter(path))
@@ -106,7 +106,7 @@ namespace Sercamcom
                     {
                         string temp = "";
                         temp += a.login + "|" + a.product + "\r\n"; ;
-                        await writer.WriteAsync(temp);
+                        writer.Write(temp);
                     }
                 }
             }
@@ -164,7 +164,7 @@ namespace Sercamcom
                         j = (j + 1) % size_h;
                     }
                     h_table[j] = node;
-                    //UpdateFile();
+                    Databank.IsSaved = false;
                     return true;
                 }
                 else
@@ -204,7 +204,7 @@ namespace Sercamcom
             {
                 h_table[i] = null;
             }
-            //UpdateFile();
+            Databank.IsSaved = false;
         }
 
         private bool FixDeleted(int deleted)
